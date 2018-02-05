@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Tornado Counts</title>
+  <meta name="description" content="TKTK">
+  <meta name="author" content="Daniel Levitt">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="js/libs/modernizr-2.0.6.min.js"></script>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>U.S. Tornado Counts</h1>
+    <div id="lead">
+      <p>The U.S. is the tornado capital of the world, due to it's location and sheer size of land. Below I've organized number of tornadoes by state since 1950, using data from <a href="https://www.ncdc.noaa.gov/stormevents/" target="_blank">NOAA's Storm Events Database</a>. You'll notice a general increase in the number of tornadoes as time goes on. There are many reasons for this, including more weather radars, better radar technology and the movie <a href="https://www.forbes.com/sites/marshallshepherd/2017/02/26/the-death-of-bill-paxton-reminds-us-that-twister-changed-meteorology/#38673e646b7e" target="_blank">Twister</a> (no, really).</p>
+    </div>
+    <div id="main">
+      <!--<div id="button-wrap">
+        <div id="count" class="button active">COUNT</div>
+        <div id="name" class="button">NAME</div>
+      </div>-->
+      
+      <div id="vis"></div>
+    </div>
+  </div> <!--! end of #container -->
+
+
+  <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> -->
+  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.2.min.js"><\/script>')</script>
+
+
+  <script src="js/libs/coffee-script.js"></script>
+  <script src="js/libs/isotope.pkgd.min.js"></script>
+  <script src="js/libs/d3.js"></script>
+  <script src="js/libs/queue.min.js"></script>
+  <script type="text/coffeescript" src="coffee/small_multiples.coffee"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+    });
+  </script>
+
+
+  <script> // Change UA-XXXXX-X to be your site's ID
+    window._gaq = [['_setAccount','UAXXXXXXXX1'],['_trackPageview'],['_trackPageLoadTime']];
+    Modernizr.load({
+      load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
+    });
+  </script>
+
+
+  <!--[if lt IE 7 ]>
+    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+  <![endif]-->
+  
+</body>
+</html>
