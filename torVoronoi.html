@@ -149,7 +149,7 @@ var line = d3.line()
       return y(d.value); });
 
 //Now we call our chart.
-d3.csv("/tornadoVoronoi/data/torYears.csv", type, function(error, data) {
+d3.csv("torYears.csv", type, function(error, data) {
   if (error) throw error;
 
   x.domain(d3.extent(years));
