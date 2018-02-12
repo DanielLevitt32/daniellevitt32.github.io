@@ -1,19 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="no-js" lang="en">
 <head>
 	<meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-
-    <!-- Global Site Tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106991375-1"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments)};
-	  gtag('js', new Date());
-
-	  gtag('config', 'UA-106991375-1');
-	</script>
 
     <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
@@ -24,18 +15,13 @@
 	<script type="text/javascript" src="https://cdn.rawgit.com/Caged/d3-tip/master/index.js"></script>
 
 	<meta charset="UTF-8">
-	<title>DanielLevitt32</title>
+	<title>Hurricane Costs</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link href="https://fonts.googleapis.com/css?family=Biryani:200,700|Open+Sans:400,700" rel="stylesheet">
 	</head>
 
 
-	<header>
-		<nav class="menu" role="navigation">
-			<a class="menu_home_link" href="index.html"><h1 class="menu_home_button">Daniel Levitt</h1></a>
-		</nav>
-					
-	</header>
+	
 	<!-- Get inicial sample from http://jsfiddle.net/QwMPS/ --> 
 	<script src="d3sankey.js"></script> 
 
@@ -177,6 +163,14 @@
 	
 	</style>
 	<body>
+		<div class="container">
+    <h1>U.S. Hurricane Costs</h1>
+    <br>
+    <div id="lead">
+      <p>The U.S. experienced one of its worst hurricane seasons on record in 2017 in terms of lives lost and damage caused. Below are the funds provided by FEMA, through fiscal year 2018, for four of the worst hurricanes to make landfall in the U.S. The agency <em>still</em> has expenditures associated with Hurricane Sandy from 2012 and, as <a href="https://projects.fivethirtyeight.com/sandy-311/" target="_blank">FiveThirtyEight</a> neatly outlined, the effects of 2017 will be felt for years to come.</p>
+      <p>Figures are taken from <a href="https://www.fema.gov/media-library-data/1516297447909-222f1bb738282615226e3cded66fd577/January2018DisasterReliefFundReport.pdf" target="_blank">page 14 on the PDF.</a></p>
+    </div>
+
 		<div id="sankey" class="sankeybox">
 			<div class="d3-zoom-controls">
 			  <a data-zoom="+0.5" class="btn btn-circle"><span class="fa fa-plus"></span></a>
