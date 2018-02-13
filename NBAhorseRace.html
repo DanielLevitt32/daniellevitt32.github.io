@@ -1,0 +1,515 @@
+<!--SOURCES
+
+  1) 
+
+  2) http://bl.ocks.org/sivartravis/b8b543661cade63c8548-->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Language" content="en" />
+    <title>The NBA's Race For Number One</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+</head>
+
+<style>
+
+body {
+  font-size: 12px;
+  font-family: 'Abel', sans-serif;
+  margin-top: 20px;
+}
+
+li{
+    margin-left: 0px;
+    }
+
+.x.axis path,.x.axis line {
+    fill: none;
+    stroke: none;
+    }
+
+.y.axis path {
+    fill: none;
+    }
+
+.y.axis line {
+    fill: none;
+    stroke: #eeeeee;
+    shape-rendering: crispEdges;
+    }
+
+.x.axis text, .y.axis text{
+      font-size: 10px;
+      fill:grey;
+    }
+
+.line {
+  fill: none;
+  stroke-width: 2px;
+}
+
+.tick line{
+    stroke: #e0e1e1;
+    opacity: 1;
+    }
+
+#title, .explain{
+      text-indent: 15px;
+    }
+
+#credit{
+      color:grey;
+      text-indent: 20px;
+      line-height: 30px;
+    }
+ 
+ a:hover{
+      cursor:pointer;
+    }
+
+
+</style>
+
+<body>
+
+<h1 id="title">NBA Race To Number One</h1>
+<h5 id="credit">By <a href="https://twitter.com/DanielLevitt32" target="_blank">Daniel Levitt</a></h5>
+<p class="explain"> · Hover over a team's name to isolate the ranking of said team based on win percentage through Week 17 of the 2018 season.</p>
+<p class="explain"> · Track which team will secure the No. 1 seed and home-court advantage throughout the playoffs, and which team is tanking the hardest for the No. 1 pick in the 2018 NBA Draft.</p>
+<p class="explain">Sources: <a href="https://www.basketball-reference.com/friv/standings.fcgi?month=10&day=22&year=2017&lg_id=NBA" target="_blank">Basketball Reference</a>; <a href="http://bl.ocks.org/jieqianzhang/890c4a214e48bedc8755" target="_blank">Jieqian Zhang.</a></p>
+
+<!--<div class="bs-example">
+    <ul class="nav nav-pills" role="tablist">
+      <li role="presentation" class="dropdown">
+        <a id="drop4" data-target="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+          East
+          <span class="caret"></span>
+        </a>
+        <ul id="menu1" class="dropdown-menu" aria-labelledby="drop4">
+         <li id="democrats"><a data-target="#">Eastern Conference</a></li>
+          <li role="separator" class="divider"></li>
+          <li class="teamName"><a data-target="#">Atlanta Hawks</a></li>
+          <li class="teamName"><a data-target="#">Boston Celtics</a></li>
+          <li class="teamName"><a data-target="#">Brooklyn Nets</a></li>
+          <li class="teamName"><a data-target="#">Charlotte Hornets</a></li>
+          <li class="teamName"><a data-target="#">Chicago Bulls</a></li>  
+          <li class="teamName"><a data-target="#">Cleveland Cavaliers</a></li>
+          <li class="teamName"><a data-target="#">Detroit Pistons</a></li>
+          <li class="teamName"><a data-target="#">Indiana Pacers</a></li>
+          <li class="teamName"><a data-target="#">Miami Heat</a></li>
+          <li class="teamName"><a data-target="#">Milwaukee Bucks</a></li>
+          <li class="teamName"><a data-target="#">New York Knicks</a></li>
+          <li class="teamName"><a data-target="#">Orlando Magic</a></li>
+          <li class="teamName"><a data-target="#">Philadelphia 76ers</a></li>
+          <li class="teamName"><a data-target="#">Toronto Raptors</a></li>
+          <li class="teamName"><a data-target="#">Washington Wizards</a></li>      
+        </ul>
+      </li>
+
+      <li role="presentation" class="dropdown">
+        <a id="drop5" data-target="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+          West
+          <span class="caret"></span>
+        </a>
+        <ul id="menu2" class="dropdown-menu" aria-labelledby="drop5">
+        <li id="republicans"><a data-target="#">Western Conference</a></li>
+           <li role="separator" class="divider"></li>
+          <li class="teamName"><a data-target="#">Dallas Mavericks</a></li>
+          <li class="teamName"><a data-target="#">Denver Nuggets</a></li>
+          <li class="teamName"><a data-target="#">Golden State Warriors</a></li>
+          <li class="teamName"><a data-target="#">Houston Rockets</a></li>
+          <li class="teamName"><a data-target="#">Los Angeles Clippers</a></li>
+          <li class="teamName"><a data-target="#">Los Angeles Lakers</a></li>
+          <li class="teamName"><a data-target="#">Memphis Grizzlies</a></li>
+          <li class="teamName"><a data-target="#">Minnesota Timberwolves</a></li>
+          <li class="teamName"><a data-target="#">New Orleans Pelicans</a></li>
+          <li class="teamName"><a data-target="#">Oklahoma City Thunder</a></li>
+          <li class="teamName"><a data-target="#">Phoenix Suns</a></li>
+          <li class="teamName"><a data-target="#">Portland Trail Blazers</a></li>
+          <li class="teamName"><a data-target="#">Sacramento Kings</a></li>
+          <li class="teamName"><a data-target="#">San Antonio Spurs</a></li>
+          <li class="teamName"><a data-target="#">Utah Jazz</a></li>         
+        </ul>
+      </li>
+      <li role="presentation" class="active" id="replay"><a data-target="#">Replay Race</a></li>
+    </ul> 
+  </div>--> 
+
+<div id="graphic"></div>
+
+<script src="http://d3js.org/d3.v3.js"></script>
+
+<script>
+
+function drawGraphics(){
+
+var margin = {top: 90, right: 120, bottom: 30, left: 50},
+    width = 1200 - margin.left - margin.right,
+    height = 700 - margin.top - margin.bottom;
+
+var speed = 500;
+
+var x = d3.scale.linear()
+    .range([0, width]);
+
+var y = d3.scale.linear()
+    .range([height, 0]);
+
+var xAxis = d3.svg.axis()
+    .scale(x)
+    .tickSize(0)
+    .ticks(17)
+    .orient("top");
+
+var xtickLabels = ["Week 1","Week 2","Week 3","Week 4","Week 5","Week 6","Week 7","Week 8","Week 9","Week 10","Week 11","Week 12","Week 13","Week 14","Week 15","Week 16","Week 17"];
+
+xAxis.tickFormat(function(d,i){
+    return xtickLabels[i]
+  });
+
+var yAxis = d3.svg.axis()
+    .scale(y)
+    .tickFormat(function(d) { return d;})
+    .ticks(30)
+    .innerTickSize(- width)
+    .tickPadding(10)
+    .outerTickSize(0)
+    .orient("left");
+
+
+var line = d3.svg.line()
+    .x(function(d) { return x(d.week); })
+    .y(function(d) { return y(d.rank); });
+
+
+var svg = d3.select("#graphic").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+    .call(responsivefy)
+    .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+var clip = svg.append("clipPath")
+    .attr("id", "clip")
+    .append("rect")
+    .attr("x","-5")
+    .attr("y","-15")
+    .attr("width", 0)
+    .attr("height", height*1.2);
+
+
+d3.csv("NBAhorseData.csv", function(error, data) {
+
+
+  var color = d3.scale.category20();
+
+  
+  color.domain(d3.keys(data[0]).filter(function(key) { return key !== "week"; }));
+
+  data.forEach(function(d) {
+    d.week = +[d.week];
+  });
+
+
+  var teams = color.domain().map(function(name) {
+    return {
+      name: name,
+      values: data.map(function(d) {
+        return {name:name, week: d.week, rank: +d[name]};
+      })
+    };
+  });
+
+
+  x.domain(d3.extent(data, function(d) { return d.week; }));
+
+
+  y.domain([
+    d3.min(teams, function(c) { return d3.min(c.values, function(v) { return v.rank ; }); }),
+    d3.max(teams, function(c) { return d3.max(c.values, function(v) { return v.rank ; }); })
+  ].reverse());
+
+
+svg.append("g")
+      .attr("class", "x axis")
+      .attr("transform","translate(0,0)")
+      .call(xAxis)
+      .selectAll("text")
+      .style("text-anchor","start")
+      .attr("dx", "2.3em")
+      .attr("dy", "-0.9em") 
+      .attr("transform",function(d){
+        return "rotate(-60)"});
+
+  svg.append("g")
+      .attr("class", "y axis")
+      .call(yAxis)
+
+  //timeline 
+  svg.append("line")
+        .attr(
+        {
+            "class":"horizontalGrid",
+            "x1" : -2,
+            "x2" : width,
+            "y1" : y(1) - 13,
+            "y2" : y(1) - 13,
+            "fill" : "none",
+            "shape-rendering" : "crispEdges",
+            "stroke" : "#e0e1e1",
+            "stroke-width" : "1px",
+            "stroke-dasharray": ("3, 3")
+        })
+        .attr("id","dotted")
+        .attr("clip-path", function(d) { return "url(#clip)"; });
+
+
+  //end of timeline
+
+ 
+  var teams = svg.selectAll(".team")
+      .data(teams)
+    .enter().append("g")
+      .attr("class", "team");
+
+
+ function colorFilter(d){
+    if (d.name === "Atlanta Hawks") {
+          return "#C4D600";
+      } else if (d.name === "Boston Celtics") {
+          return "#008248";
+      } else if (d.name === "Brooklyn Nets"){
+          return "#000000";
+      } else if (d.name === "Charlotte Hornets"){
+          return "#00788C";
+      } else if (d.name === "Chicago Bulls") {
+          return "#008248";
+      } else if (d.name === "Cleveland Cavaliers"){
+          return "#6F2633";
+      } else if (d.name === "Detroit Pistons"){
+          return "#0c4c93";
+      } else if (d.name === "Indiana Pacers"){
+          return "#FDBB30";
+      } else if (d.name === "Miami Heat") {
+          return "#98002E";
+      } else if (d.name === "Milwaukee Bucks"){
+          return "#00471B";
+      } else if (d.name === "New York Knicks"){
+          return "#F58426";
+      } else if (d.name === "Orlando Magic") {
+          return "#0B77BD";
+      } else if (d.name === "Philadelphia 76ers"){
+          return "#006BB6";
+      } else if (d.name === "Toronto Raptors"){
+          return "#c5b358";
+      } else if (d.name === "Washington Wizards"){
+          return "#C4CED4";
+      } else if (d.name === "Dallas Mavericks") {
+          return "#007DC5";
+      } else if (d.name === "Denver Nuggets"){
+          return "#5091CD";
+      } else if (d.name === "Golden State Warriors"){
+          return "#FFCD34";
+      } else if (d.name === "Houston Rockets") {
+          return "#CE1141";
+      } else if (d.name === "Los Angeles Clippers"){
+          return "#000000";
+      } else if (d.name === "Los Angeles Lakers"){
+          return "#FDB927";
+      } else if (d.name === "Memphis Grizzlies"){
+          return "#6189B9";
+      } else if (d.name === "Minnesota Timberwolves") {
+          return "#005083";
+      } else if (d.name === "New Orleans Pelicans"){
+          return "#85714D";
+      } else if (d.name === "Oklahoma City Thunder"){
+          return "#007AC1";
+      } else if (d.name === "Phoenix Suns") {
+          return "#1D1160";
+      } else if (d.name === "Portland Trail Blazers"){
+          return "#000000";
+      } else if (d.name === "Sacramento Kings"){
+          return "#5A2D81";
+      } else if (d.name === "San Antonio Spurs"){
+          return "#C4CED4";
+      } else if (d.name === "Utah Jazz"){
+          return "#0C2340";
+      } else {
+          return "#ce3b69";}
+    }
+
+  var path = svg.selectAll(".team").append("path")
+      .attr("class", "line")
+      .attr("d", function(d) { return line(d.values); })
+      .attr("clip-path", function(d) { return "url(#clip)"; })
+      .style("stroke", colorFilter)
+
+var circleStart = teams.append("circle")
+      .attr("cx", "0")
+      .attr("cy", function(d) { return y(d.values[0].rank); })
+      .style("fill", colorFilter)
+      .attr("r", 2)
+
+ 
+
+var circleEnd = teams.append("circle")
+      .attr("cx", function(d) { return x(d.values[0].week); })
+      .attr("cy", function(d) { return y(d.values[0].rank);} )
+      .style("fill", colorFilter)
+      .attr("r", 2);
+
+
+var timemark = teams.append("path")
+                  .attr("d", d3.svg.symbol().type("triangle-up"))
+                  .style("fill", "grey")
+                  .attr("transform",function(d) { return "translate(" + (x(d.values[0].week) ) + "," + (y(1)-15) + ") rotate(-30)"; })
+
+
+var round = teams.append("circle")
+      .attr("transform", function(d) { return "translate(" + (x(d.values[0].week) + 15) + "," + (y(d.values[0].rank)) + ")"; })
+      .attr("x", 0)
+      .attr("y",0)
+      .attr("r", 10)
+      .on("mouseover", function (d) {
+        teams.style("opacity",0.1);
+        teams.filter(function(path) {return path.name === d.name; }).style("opacity",1);
+      })
+      .on("mouseout", function (d) { teams.style("opacity",1); })
+      .style("fill", colorFilter);
+
+
+  var ranking = teams.append("text")
+      .attr("transform", function(d) { return "translate(" + (x(d.values[0].week) + 15 ) + "," + (y(d.values[0].rank) ) + ")"; })
+      .attr("x", 0)
+      .attr("dy", ".31em")
+      .attr("text-anchor","middle")
+      .on("mouseover", function (d) {
+        teams.style("opacity",0.1);
+        teams.filter(function(path) {return path.name === d.name; }).style("opacity",1);
+      })
+      .on("mouseout", function (d) { teams.style("opacity",1); })
+      .style("cursor","pointer")
+      .style("fill", "#ffffff")
+      .style("font-weight", "bold")
+      .text(function(d) { return d.values[0].rank; });
+
+  var label = teams.append("text")
+      .attr("transform", function(d) { return "translate(" + (x(d.values[0].week) + 15) + "," + (y(d.values[0].rank) ) + ")"; })
+      .attr("x", 8)
+      .attr("dy", ".31em")
+      .attr("id","label")
+      .on("mouseover", function (d) {
+        teams.style("opacity",0.1);
+        teams.filter(function(path) {return path.name === d.name; }).style("opacity",1);
+      })
+      .on("mouseout", function (d) { teams.style("opacity",1); })
+      .style("cursor","pointer")
+      .style("stroke", colorFilter)
+      .text(function(d) { return d.name; });
+
+  
+  var week = 1;
+
+  var transition = d3.transition()
+    .delay(500)
+    .duration(speed)
+    .each("start", function start() {     
+          
+      label.transition()
+        .duration(speed)
+        .ease('linear')
+      .attr("transform", function(d) { return "translate(" + (x(d.values[week].week) + 15) + "," + (y(d.values[week].rank)) + ")"; })
+      .text(function(d) { return  d.name; });
+
+      ranking.transition()
+        .duration(speed)
+        .ease('linear')
+        .attr("transform", function(d) { return "translate(" + (x(d.values[week].week) + 15) + "," + (y(d.values[week].rank) ) + ")"; })
+      .text(function(d,i) { return  d.values[week].rank; });
+
+      round.transition()
+        .duration(speed)
+        .ease('linear')
+        .attr("transform", function(d) { return "translate(" + (x(d.values[week].week) + 15) + "," + (y(d.values[week].rank)) + ")"; });
+    
+      circleEnd.transition()
+        .duration(speed)
+        .ease('linear')
+        .attr("cx", function(d) { return x(d.values[week].week); })
+        .attr("cy", function(d) { return y(d.values[week].rank); });
+
+      clip.transition()
+        .duration(speed)
+        .ease('linear')
+        .attr("width", x(week+1)+15)
+        .attr("height", height*1.2);
+
+      timemark.transition()
+         .duration(speed)
+         .ease('linear')
+         .attr("transform",function(d) { return "translate(" + (x(d.values[week].week) ) + "," + (y(1)-15) + ") rotate(-30)"; })
+      week+=1;
+
+
+      if (week !== data[0].length){
+
+        transition = transition.transition().each("start", start);}     
+      });
+
+
+    $(".team").on("click",function(){
+      var nameOfTeam = $(this).text();
+        teams.style("opacity",0.1);
+        teams.filter(function(path) {
+          return path.name === nameOfTeam;
+        }).style("opacity",1);
+      });
+   });
+
+      function responsivefy(svg) {
+
+        var container = d3.select(svg.node().parentNode),
+            width = parseInt(svg.style("width")),
+            height = parseInt(svg.style("height")),
+            aspect = width / height;
+
+        svg.attr("viewBox", "0 0 " + width + " " + height)
+            .attr("perserveAspectRatio", "xMinYMid")
+            .call(resize);
+
+        d3.select(window).on("resize." + container.attr("#graphic"), resize);
+
+        function resize() {
+            var targetWidth = parseInt(container.style("width"));
+            svg.attr("width", targetWidth * 0.8);
+            svg.attr("height", Math.round(targetWidth /aspect * 0.8));
+        }  
+    }
+
+}
+
+</script>
+
+</body>
+
+<script>
+
+drawGraphics()
+
+d3.select("#replay")
+    .on("click", function(){
+      location.reload()
+    })
+
+</script>
+
+</html>
