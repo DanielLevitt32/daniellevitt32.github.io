@@ -1,0 +1,50 @@
+[
+  {
+    "path": "M 764,400 A 37.76 37.76 0 0 1 759,330",
+    "text": "Modules Mike included in the default d3 build have the most stars and downloads",
+    "textOffset": [
+      773,
+      414
+    ]
+  },
+  {
+    "path": "M 811,39 A 48.376 48.376 0 0 0 907,50",
+    "text": "The most downloaded, d3-queue, predates d3v4",
+    "textOffset": [
+      696,
+      10
+    ]
+  },
+  {
+    "path": "M 455,75 A 60.466 60.466 0 0 0 547,87",
+    "text": "Susie's legend generator is the most popular module not in the default build",
+    "textOffset": [
+      369,
+      35
+    ]
+  },
+  {
+    "path": "M 432,358 A 35.487 35.487 0 0 1 394,314",
+    "text": "All three of Peter's modules have about the same number of downloads",
+    "textOffset": [
+      445,
+      359
+    ]
+  },
+  {
+    "path": "M 133,277 A 99.156 99.156 0 0 0 56,194",
+    "text": "I just put swoopy-drag and force-container on npm",
+    "textOffset": [
+      38,
+      310
+    ]
+  },
+  {
+    "path": "M 134,339 A 82.601 82.601 0 0 1 49,432",
+    "text": "",
+    "textOffset": [
+      38,
+      310
+    ]
+  }
+]
