@@ -79,6 +79,17 @@ svg{
   border: 0.5px solid black;
 }
 
+.subhed { 
+  text-align: left;
+  width: auto;
+  margin: auto;
+  font-family: Georgia, serif;
+  font-size: 1.4em;
+  line-height: 1.7em; }
+
+.col-md-6{ 
+  font-size: 12px;
+ }
 
 
 
