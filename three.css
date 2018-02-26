@@ -87,11 +87,21 @@ svg{
   font-size: 1.4em;
   line-height: 1.7em; }
 
-.col-md-6{ 
+.col-md-6 { 
   font-size: 12px;
  }
 
+.g-ai2html-settings {
+    responsiveness: dynamic;
+}
 
+.ai2html-settings {
+    responsiveness: dynamic;
+}
+
+.settings {
+    responsiveness: dynamic;
+}
 
 
 
