@@ -1,0 +1,78 @@
+H1 {
+	font-size: 28px;
+	line-height: 32px;
+	font-family: FinancierDisplayWeb, serif;
+	color: #33302e;
+	font-weight: 400;
+	text-align: left;
+	max-width: 700px;
+	width: 100%;
+	position: relative;
+	margin-left: 120px;
+	margin-top: 20px;
+}
+
+P {
+    text-align: left;
+	max-width: 700px;
+	width: 100%;
+	position: relative;
+    font-size: 18px;
+    line-height: 1.6;
+    font-family: Georgia,serif;
+    margin-top: 0px;
+    margin-left: 120px;
+	margin-bottom: 28px;
+	color: #33302e;
+}   
+
+.intro { 
+	font-family: MetricWeb, sans-serif;
+	font-size: 18px;
+	line-height: 24px;
+	margin-top: 0px;
+	color: #66605c;
+	margin-bottom: 0;
+	opacity: 0.8; 
+	font-weight: 300;
+	text-align: left;
+	max-width: 700px;
+	width: 100%;
+	position: relative;
+	margin-left: 120px;
+}
+
+.byline {
+	font-family: MetricWeb, sans-serif;
+	font-size: 16px;
+	line-height: 20px;
+	display: inline-block;
+	color: #33302e;
+	margin-bottom: 10px;
+	text-align: left;
+	max-width: 700px;
+	width: 100%;
+	position: relative;
+	margin-left: 120px;
+}
+
+.date {
+	font-family: MetricWeb, sans-serif;
+	font-size: 14px;
+	line-height: 20px;
+	color: #66605c;
+	margin-bottom: 16px;
+	display: inline-block;
+	text-transform: uppercase;
+	text-align: left;
+	max-width: 700px;
+	width: 100%;
+	position: relative;
+	margin-left: 120px;
+	
+}
+
+
+
+
+
