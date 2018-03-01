@@ -11,34 +11,47 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-    <!-- Latest compiled and minified Bootstrap CSS 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">-->
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
     <!--Link to your own stylesheet-->
      <link rel="stylesheet" type="text/css" href="ft.css">
 
 </head>
 
-<body bgcolor="#fef3e8">
-	<h1>US companies cut ties to NRA after school shooting</h1>
-		<div class="intro">Pressure from customers and campaigners forces corporate America to act
-		</div>
+<div id="main-wrapper" class="">
+        <div id="main-content" class="container">
+            <header class="row">
+                <div class="social-links col-md-12"></div>
+                <div class="col-md-12">
+                    <h1>This Mass Shooting Is Different</h1>
+                </div>
+            </header>
+        </div>
+</div>
+
+
+
+	
+		<p class="intro .col-md-6 .col-md-offset-3">Pressure from customers and campaigners forces corporate America to act</p>
+
+		
+		<!--<div><img src="img/cnn.jpeg" alt="Mountain View">-->
+		
+		<!--<div class="caption">Marjory Stoneman Douglas High School student Cameron Kasky, left, questions Senator Marco Rubio during a CNN town hall meeting in Florida © AP
+		</div>-->
 <br>
-		<div class="byline"><b><a href="https://www.twitter.com" target="_blank">Daniel Levitt</a></b> in Florida
-		</div>
+		<p class="byline"><b><a href="https://www.twitter.com" target="_blank">Daniel Levitt</a></b> in Florida</p>
+		<div class="date">FEBRUARY 18, 2018</div>
 
-		<div class="date">
-		FEBRUARY 18, 2018
-		</div>
+<hr color="#cbc0b6" noshade=""></hr>
 
-<hr color="#cbc0b6" noshade="">
-
-
+<body>
 	<p>Delta Air Lines, United Airlines and MetLife were among several prominent U.S. companies to cut ties with the National Rifle Association last week, after 17 people were shot and killed at Marjory Stoneman Douglas High School in Parkland, Florida. The latest episode in America's bloody history of guns injected another layer into an already complicated issue and forced corporate America to pick a side.</p> 
 	</p>
-
-	<p>The morality of businesses' associations with the NRA was thrust into the public sphere in 2012, when 27 people &#8212; 20 of whom were children between the ages of six and seven &#8212; were gunned down at Sandy Hook Elementary School in Newtown, Connecticut. Pressure continued to percolate for years, hitting the headlines every time another deadly incident occurred. It appears that the Parkland shooting &#8212; already the 34th of its kind in the U.S. in 2018 &#8212; was enough to finally infiltrate the arteries of some of the world's largest companies.</p>
-
+<br>
+	<p>The morality of businesses associating themselves with the NRA was thrust into the public sphere in 2012, when 27 people &#8212; 20 of whom were children between the ages of six and seven &#8212; were gunned down at Sandy Hook Elementary School in Newtown, Connecticut. Pressure continued to percolate for years, hitting the headlines every time another deadly incident occurred. It appears that the Parkland shooting &#8212; already the 34th of its kind in the U.S. in 2018 &#8212; was enough to finally infiltrate the arteries of some of the world's largest companies.</p>
+<br>
 	<p>Unfortunately the first two months of this year haven't been an anomaly. Last year, mass shootings &#8212; defined as all shooting incidents in which four or more people are killed or injured by gunfire &#8212; happened on 200 days, or almost 60 percent of the calendar year.</p>
 
 	<!--**************************-->
@@ -46,9 +59,462 @@
 	<!--*****CALENDAR ai2html*****-->
 	<!--**************************-->
 	<!--**************************-->
-
 	
-	<p><b>Enter chart one</b></p>
+	<script type="text/javascript">
+    (function() {
+        // only want one resizer on the page
+        if (document.documentElement.className.indexOf("g-resizer-v3-init") > -1) return;
+        document.documentElement.className += " g-resizer-v3-init";
+        // require IE9+
+        if (!("querySelector" in document)) return;
+        function resizer() {
+            var elements = Array.prototype.slice.call(document.querySelectorAll(".g-artboard[data-min-width]")),
+                widthById = {};
+            elements.forEach(function(el) {
+                var parent = el.parentNode,
+                    width = widthById[parent.id] || parent.getBoundingClientRect().width,
+                    minwidth = el.getAttribute("data-min-width"),
+                    maxwidth = el.getAttribute("data-max-width");
+                widthById[parent.id] = width;
+
+                if (+minwidth <= width && (+maxwidth >= width || maxwidth === null)) {
+                    el.style.display = "block";
+                } else {
+                    el.style.display = "none";
+                }
+            });
+            try {
+                if (window.parent && window.parent.$) {
+                    window.parent.$("body").trigger("resizedcontent", [window]);
+                }
+                if (window.require) {
+                    require(['foundation/main'], function() {
+                        require(['shared/interactive/instances/app-communicator'], function(AppCommunicator) {
+                            AppCommunicator.triggerResize();
+                        });
+                    });
+                }
+            } catch(e) { console.log(e); }
+        }
+
+        document.addEventListener('DOMContentLoaded', resizer);
+        // feel free to replace throttle with _.throttle, if available
+        window.addEventListener('resize', throttle(resizer, 200));        
+
+        function throttle(func, wait) {
+            // from underscore.js
+            var _now = Date.now || function() { return new Date().getTime(); },
+                context, args, result, timeout = null, previous = 0;
+            var later = function() {
+                previous = _now();
+                timeout = null;
+                result = func.apply(context, args);
+                if (!timeout) context = args = null;
+            };
+            return function() {
+                var now = _now(), remaining = wait - (now - previous);
+                context = this;
+                args = arguments;
+                if (remaining <= 0 || remaining > wait) {
+                    if (timeout) {
+                        clearTimeout(timeout);
+                        timeout = null;
+                    }
+                    previous = now;
+                    result = func.apply(context, args);
+                    if (!timeout) context = args = null;
+                } else if (!timeout && options.trailing !== false) {
+                    timeout = setTimeout(later, remaining);
+                }
+                return result;
+            };
+        }
+
+       
+    })();
+</script>
+
+
+<!-- Generated by ai2html v0.66.4 - 2018-02-28 19:36 -->
+<!-- ai file: guncalendar.ai -->
+<style type='text/css' media='screen,print'>
+	#g-guncalendar-box .g-artboard {
+		margin:0 auto;
+	}
+	#g-guncalendar-box .g-artboard p {
+		margin:0;
+	}
+	.g-aiAbs {
+		position:absolute;
+	}
+	.g-aiImg {
+		display:block;
+		width:100% !important;
+	}
+	.g-aiPointText p { white-space: nowrap; }
+	#g-guncalendar-small {
+		position:relative;
+		overflow:hidden;
+		width:320px;
+	}
+	#g-guncalendar-small p {
+		font-weight:500;
+		font-size:10px;
+		line-height:12px;
+		height:auto;
+		filter:alpha(opacity=100);
+		-ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+		opacity:1;
+		letter-spacing:0em;
+		text-align:left;
+		color:rgb(51,51,51);
+		text-transform:none;
+		padding-bottom:0;
+		padding-top:0;
+		mix-blend-mode:normal;
+		font-style:normal;
+	}
+	#g-guncalendar-small .g-pstyle0 {
+		font-weight:700;
+		font-size:14px;
+		line-height:17px;
+		color:rgb(0,0,0);
+	}
+	#g-guncalendar-small .g-pstyle1 {
+		font-size:12px;
+		line-height:14px;
+	}
+	#g-guncalendar-small .g-pstyle2 {
+		font-size:12px;
+		line-height:14px;
+		height:14px;
+	}
+	#g-guncalendar-small .g-pstyle3 {
+		font-weight:700;
+		font-size:11px;
+		line-height:13px;
+		height:13px;
+	}
+	#g-guncalendar-small .g-pstyle4 {
+		height:12px;
+	}
+	#g-guncalendar-small .g-pstyle5 {
+		font-size:12px;
+		line-height:14px;
+		color:rgb(188,177,168);
+	}
+	#g-guncalendar-medium {
+		position:relative;
+		overflow:hidden;
+		width:600px;
+	}
+	#g-guncalendar-medium p {
+		font-weight:500;
+		font-size:15px;
+		line-height:17px;
+		height:auto;
+		filter:alpha(opacity=100);
+		-ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+		opacity:1;
+		letter-spacing:0em;
+		text-align:left;
+		color:rgb(51,51,51);
+		text-transform:none;
+		padding-bottom:0;
+		padding-top:0;
+		mix-blend-mode:normal;
+		font-style:normal;
+	}
+	#g-guncalendar-medium .g-pstyle0 {
+		font-weight:700;
+		font-size:19px;
+		line-height:23px;
+		color:rgb(0,0,0);
+	}
+	#g-guncalendar-medium .g-pstyle1 {
+		line-height:18px;
+	}
+	#g-guncalendar-medium .g-pstyle2 {
+		line-height:18px;
+		height:18px;
+	}
+	#g-guncalendar-medium .g-pstyle3 {
+		font-weight:700;
+		font-size:14px;
+		height:17px;
+	}
+	#g-guncalendar-medium .g-pstyle4 {
+		height:17px;
+	}
+	#g-guncalendar-medium .g-pstyle5 {
+		font-size:12px;
+		line-height:14px;
+		color:rgb(188,177,168);
+	}
+	#g-guncalendar-large {
+		position:relative;
+		overflow:hidden;
+		width:740px;
+	}
+	#g-guncalendar-large p {
+		font-weight:500;
+		font-size:18px;
+		line-height:22px;
+		height:auto;
+		filter:alpha(opacity=100);
+		-ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+		opacity:1;
+		letter-spacing:0em;
+		text-align:left;
+		color:rgb(51,51,51);
+		text-transform:none;
+		padding-bottom:0;
+		padding-top:0;
+		mix-blend-mode:normal;
+		font-style:normal;
+	}
+	#g-guncalendar-large .g-pstyle0 {
+		font-weight:700;
+		font-size:20px;
+		line-height:24px;
+		color:rgb(0,0,0);
+	}
+	#g-guncalendar-large .g-pstyle1 {
+		font-size:16px;
+		line-height:19px;
+		height:19px;
+		color:rgb(0,0,0);
+	}
+	#g-guncalendar-large .g-pstyle2 {
+		font-size:16px;
+		line-height:19px;
+		height:19px;
+	}
+	#g-guncalendar-large .g-pstyle3 {
+		font-weight:700;
+		font-size:14px;
+		line-height:17px;
+		height:17px;
+	}
+	#g-guncalendar-large .g-pstyle4 {
+		height:22px;
+	}
+	#g-guncalendar-large .g-pstyle5 {
+		font-size:12px;
+		line-height:14px;
+		color:rgb(188,177,168);
+	}
+
+</style>
+
+<div id="g-guncalendar-box" class="ai2html">
+
+	<!-- Artboard: small -->
+	<div id="g-guncalendar-small" class="g-artboard g-artboard-v4" data-min-width='320' data-max-width='599'>
+		<img id="g-guncalendar-small-img" class="g-aiImg" src="img/guncalendar-small.png"/>
+		<div id="g-ai0-1" class="g-ch_1 g-aiAbs" style="top:2.4878%;left:3.0047%;width:96.875%;">
+			<p class="g-pstyle0">Mass shootings dominate America&rsquo;s schedule</p>
+			<p>&nbsp;</p>
+			<p class="g-pstyle1">Days which a mass shooting occurred in the U.S.</p>
+		</div>
+		<div id="g-ai0-2" class="g-ch_1 g-aiAbs g-aiPointText" style="top:12.5682%;margin-top:-9px;left:14.1377%;width:149px;">
+			<p class="g-pstyle2">Mass shooting occurred</p>
+		</div>
+		<div id="g-ai0-3" class="g-ch_1 g-aiAbs g-aiPointText" style="top:17.2126%;margin-top:-8.4px;left:3.4621%;width:46px;">
+			<p class="g-pstyle3">2017</p>
+		</div>
+		<div id="g-ai0-4" class="g-ch_1 g-aiAbs g-aiPointText" style="top:20.7325%;margin-top:-7.7px;left:11.6976%;width:57px;">
+			<p class="g-pstyle4">January</p>
+		</div>
+		<div id="g-ai0-5" class="g-ch_1 g-aiAbs g-aiPointText" style="top:20.7325%;margin-top:-7.7px;left:43.3348%;width:62px;">
+			<p class="g-pstyle4">February</p>
+		</div>
+		<div id="g-ai0-6" class="g-ch_1 g-aiAbs g-aiPointText" style="top:20.7325%;margin-top:-7.7px;left:78.8042%;width:50px;">
+			<p class="g-pstyle4">March</p>
+		</div>
+		<div id="g-ai0-7" class="g-ch_1 g-aiAbs g-aiPointText" style="top:33.918%;margin-top:-7.7px;left:13.8851%;width:42px;">
+			<p class="g-pstyle4">April</p>
+		</div>
+		<div id="g-ai0-8" class="g-ch_1 g-aiAbs g-aiPointText" style="top:33.918%;margin-top:-7.7px;left:46.591%;width:41px;">
+			<p class="g-pstyle4">May</p>
+		</div>
+		<div id="g-ai0-9" class="g-ch_1 g-aiAbs g-aiPointText" style="top:33.918%;margin-top:-7.7px;left:79.9016%;width:44px;">
+			<p class="g-pstyle4">June</p>
+		</div>
+		<div id="g-ai0-10" class="g-ch_1 g-aiAbs g-aiPointText" style="top:48.8449%;margin-top:-7.7px;left:14.1976%;width:40px;">
+			<p class="g-pstyle4">July</p>
+		</div>
+		<div id="g-ai0-11" class="g-ch_1 g-aiAbs g-aiPointText" style="top:48.8449%;margin-top:-7.7px;left:45.2101%;width:53px;">
+			<p class="g-pstyle4">August</p>
+		</div>
+		<div id="g-ai0-12" class="g-ch_1 g-aiAbs g-aiPointText" style="top:48.8449%;margin-top:-7.7px;left:75.2138%;width:71px;">
+			<p class="g-pstyle4">September</p>
+		</div>
+		<div id="g-ai0-13" class="g-ch_1 g-aiAbs g-aiPointText" style="top:63.7718%;margin-top:-7.7px;left:11.7043%;width:57px;">
+			<p class="g-pstyle4">October</p>
+		</div>
+		<div id="g-ai0-14" class="g-ch_1 g-aiAbs g-aiPointText" style="top:63.8962%;margin-top:-7.7px;left:43.011%;width:68px;">
+			<p class="g-pstyle4">November</p>
+		</div>
+		<div id="g-ai0-15" class="g-ch_1 g-aiAbs g-aiPointText" style="top:63.8962%;margin-top:-7.7px;left:75.8391%;width:68px;">
+			<p class="g-pstyle4">December</p>
+		</div>
+		<div id="g-ai0-16" class="g-ch_1 g-aiAbs g-aiPointText" style="top:80.2788%;margin-top:-8.4px;left:3.4621%;width:46px;">
+			<p class="g-pstyle3">2018</p>
+		</div>
+		<div id="g-ai0-17" class="g-ch_1 g-aiAbs g-aiPointText" style="top:83.7988%;margin-top:-7.7px;left:11.3851%;width:57px;">
+			<p class="g-pstyle4">January</p>
+		</div>
+		<div id="g-ai0-18" class="g-ch_1 g-aiAbs g-aiPointText" style="top:83.7988%;margin-top:-7.7px;left:43.6473%;width:62px;">
+			<p class="g-pstyle4">February</p>
+		</div>
+		<div id="g-ai0-19" class="g-ch_1 g-aiAbs" style="top:96.2786%;left:2.6818%;width:69.0625%;">
+			<p class="g-pstyle5">Source: Gun Violence Archive</p>
+		</div>
+	</div>
+
+	<!-- Artboard: medium -->
+	<div id="g-guncalendar-medium" class="g-artboard g-artboard-v4" data-min-width='600' data-max-width='739'>
+		<img id="g-guncalendar-medium-img" class="g-aiImg" src="img/guncalendar-medium.png"/>
+		<div id="g-ai1-1" class="g-ch_1 g-aiAbs" style="top:2.1714%;left:2.6619%;width:75.6667%;">
+			<p class="g-pstyle0">Mass shootings dominate America&rsquo;s schedule</p>
+			<p>&nbsp;</p>
+			<p class="g-pstyle1">Days which a mass shooting occurred in the U.S.</p>
+		</div>
+		<div id="g-ai1-2" class="g-ch_1 g-aiAbs g-aiPointText" style="top:11.6054%;margin-top:-11.5px;left:8.5995%;width:181px;">
+			<p class="g-pstyle2">Mass shooting occurred</p>
+		</div>
+		<div id="g-ai1-3" class="g-ch_1 g-aiAbs g-aiPointText" style="top:15.9869%;margin-top:-10.9px;left:2.7403%;width:53px;">
+			<p class="g-pstyle3">2017</p>
+		</div>
+		<div id="g-ai1-4" class="g-ch_1 g-aiAbs g-aiPointText" style="top:19.511%;margin-top:-10.7px;left:9.3131%;width:74px;">
+			<p class="g-pstyle4">January</p>
+		</div>
+		<div id="g-ai1-5" class="g-ch_1 g-aiAbs g-aiPointText" style="top:19.511%;margin-top:-10.7px;left:33.0406%;width:80px;">
+			<p class="g-pstyle4">February</p>
+		</div>
+		<div id="g-ai1-6" class="g-ch_1 g-aiAbs g-aiPointText" style="top:19.511%;margin-top:-10.7px;left:58.7008%;width:62px;">
+			<p class="g-pstyle4">March</p>
+		</div>
+		<div id="g-ai1-7" class="g-ch_1 g-aiAbs g-aiPointText" style="top:19.511%;margin-top:-10.7px;left:84.2629%;width:51px;">
+			<p class="g-pstyle4">April</p>
+		</div>
+		<div id="g-ai1-8" class="g-ch_1 g-aiAbs g-aiPointText" style="top:38.3681%;margin-top:-10.7px;left:60.0203%;width:48px;">
+			<p class="g-pstyle4">July</p>
+		</div>
+		<div id="g-ai1-9" class="g-ch_1 g-aiAbs g-aiPointText" style="top:38.3681%;margin-top:-10.7px;left:83.6653%;width:67px;">
+			<p class="g-pstyle4">August</p>
+		</div>
+		<div id="g-ai1-10" class="g-ch_1 g-aiAbs g-aiPointText" style="top:38.3681%;margin-top:-10.7px;left:11.9796%;width:49px;">
+			<p class="g-pstyle4">May</p>
+		</div>
+		<div id="g-ai1-11" class="g-ch_1 g-aiAbs g-aiPointText" style="top:38.3681%;margin-top:-10.7px;left:35.0616%;width:53px;">
+			<p class="g-pstyle4">June</p>
+		</div>
+		<div id="g-ai1-12" class="g-ch_1 g-aiAbs g-aiPointText" style="top:57.3396%;margin-top:-10.7px;left:7.6464%;width:93px;">
+			<p class="g-pstyle4">September</p>
+		</div>
+		<div id="g-ai1-13" class="g-ch_1 g-aiAbs g-aiPointText" style="top:57.3396%;margin-top:-10.7px;left:33.691%;width:74px;">
+			<p class="g-pstyle4">October</p>
+		</div>
+		<div id="g-ai1-14" class="g-ch_1 g-aiAbs g-aiPointText" style="top:57.4539%;margin-top:-10.7px;left:56.5691%;width:89px;">
+			<p class="g-pstyle4">November</p>
+		</div>
+		<div id="g-ai1-15" class="g-ch_1 g-aiAbs g-aiPointText" style="top:57.4539%;margin-top:-10.7px;left:80.8319%;width:89px;">
+			<p class="g-pstyle4">December</p>
+		</div>
+		<div id="g-ai1-16" class="g-ch_1 g-aiAbs g-aiPointText" style="top:77.2441%;margin-top:-10.9px;left:2.7403%;width:53px;">
+			<p class="g-pstyle3">2018</p>
+		</div>
+		<div id="g-ai1-17" class="g-ch_1 g-aiAbs g-aiPointText" style="top:80.9967%;margin-top:-10.7px;left:9.3131%;width:74px;">
+			<p class="g-pstyle4">January</p>
+		</div>
+		<div id="g-ai1-18" class="g-ch_1 g-aiAbs g-aiPointText" style="top:80.9967%;margin-top:-10.7px;left:33.0128%;width:80px;">
+			<p class="g-pstyle4">February</p>
+		</div>
+		<div id="g-ai1-19" class="g-ch_1 g-aiAbs" style="top:96.5714%;left:2.5626%;width:35.8333%;">
+			<p class="g-pstyle5">Source: Gun Violence Archive</p>
+		</div>
+	</div>
+
+	<!-- Artboard: large -->
+	<div id="g-guncalendar-large" class="g-artboard g-artboard-v4" data-min-width='740'>
+		<img id="g-guncalendar-large-img" class="g-aiImg" src="img/guncalendar-large.png"/>
+		<div id="g-ai2-1" class="g-ch_1 g-aiAbs" style="top:1.7324%;left:2.6802%;width:77.5676%;">
+			<p class="g-pstyle0">Mass shootings dominate America&rsquo;s schedule</p>
+		</div>
+		<div id="g-ai2-2" class="g-ch_1 g-aiAbs g-aiPointText" style="top:5.0237%;margin-top:1.2px;left:2.6802%;width:362px;">
+			<p class="g-pstyle1">Days on which a mass shooting occurred in the U.S.</p>
+		</div>
+		<div id="g-ai2-3" class="g-ch_1 g-aiAbs g-aiPointText" style="top:10.223%;margin-top:-12.2px;left:7.0682%;width:192px;">
+			<p class="g-pstyle2">Mass shooting occurred</p>
+		</div>
+		<div id="g-ai2-4" class="g-ch_1 g-aiAbs g-aiPointText" style="top:13.7522%;margin-top:-10.9px;left:2.4324%;width:53px;">
+			<p class="g-pstyle3">2017</p>
+		</div>
+		<div id="g-ai2-5" class="g-ch_1 g-aiAbs g-aiPointText" style="top:16.8731%;margin-top:-14.3px;left:9.2304%;width:87px;">
+			<p class="g-pstyle4">January</p>
+		</div>
+		<div id="g-ai2-6" class="g-ch_1 g-aiAbs g-aiPointText" style="top:16.8731%;margin-top:-14.3px;left:32.9566%;width:96px;">
+			<p class="g-pstyle4">February</p>
+		</div>
+		<div id="g-ai2-7" class="g-ch_1 g-aiAbs g-aiPointText" style="top:16.8731%;margin-top:-14.3px;left:59.0893%;width:73px;">
+			<p class="g-pstyle4">March</p>
+		</div>
+		<div id="g-ai2-8" class="g-ch_1 g-aiAbs g-aiPointText" style="top:16.8731%;margin-top:-14.3px;left:84.4666%;width:59px;">
+			<p class="g-pstyle4">April</p>
+		</div>
+		<div id="g-ai2-9" class="g-ch_1 g-aiAbs g-aiPointText" style="top:36.5073%;margin-top:-14.3px;left:59.0711%;width:55px;">
+			<p class="g-pstyle4">July</p>
+		</div>
+		<div id="g-ai2-10" class="g-ch_1 g-aiAbs g-aiPointText" style="top:36.5073%;margin-top:-14.3px;left:83.1707%;width:79px;">
+			<p class="g-pstyle4">August</p>
+		</div>
+		<div id="g-ai2-11" class="g-ch_1 g-aiAbs g-aiPointText" style="top:36.5073%;margin-top:-14.3px;left:11.198%;width:57px;">
+			<p class="g-pstyle4">May</p>
+		</div>
+		<div id="g-ai2-12" class="g-ch_1 g-aiAbs g-aiPointText" style="top:36.5073%;margin-top:-14.3px;left:34.7569%;width:62px;">
+			<p class="g-pstyle4">June</p>
+		</div>
+		<div id="g-ai2-13" class="g-ch_1 g-aiAbs g-aiPointText" style="top:56.2378%;margin-top:-14.3px;left:7.5236%;width:112px;">
+			<p class="g-pstyle4">September</p>
+		</div>
+		<div id="g-ai2-14" class="g-ch_1 g-aiAbs g-aiPointText" style="top:56.2378%;margin-top:-14.3px;left:32.8349%;width:87px;">
+			<p class="g-pstyle4">October</p>
+		</div>
+		<div id="g-ai2-15" class="g-ch_1 g-aiAbs g-aiPointText" style="top:56.4303%;margin-top:-14.3px;left:56.9394%;width:107px;">
+			<p class="g-pstyle4">November</p>
+		</div>
+		<div id="g-ai2-16" class="g-ch_1 g-aiAbs g-aiPointText" style="top:56.4303%;margin-top:-14.3px;left:81.2408%;width:107px;">
+			<p class="g-pstyle4">December</p>
+		</div>
+		<div id="g-ai2-17" class="g-ch_1 g-aiAbs g-aiPointText" style="top:77.6598%;margin-top:-10.9px;left:2.8712%;width:53px;">
+			<p class="g-pstyle3">2018</p>
+		</div>
+		<div id="g-ai2-18" class="g-ch_1 g-aiAbs g-aiPointText" style="top:77.6598%;margin-top:-10.9px;left:2.8712%;width:53px;">
+			<p class="g-pstyle3">2018</p>
+		</div>
+		<div id="g-ai2-19" class="g-ch_1 g-aiAbs g-aiPointText" style="top:80.9732%;margin-top:-14.3px;left:9.3768%;width:87px;">
+			<p class="g-pstyle4">January</p>
+		</div>
+		<div id="g-ai2-20" class="g-ch_1 g-aiAbs g-aiPointText" style="top:80.9732%;margin-top:-14.3px;left:9.3768%;width:87px;">
+			<p class="g-pstyle4">January</p>
+		</div>
+		<div id="g-ai2-21" class="g-ch_1 g-aiAbs g-aiPointText" style="top:80.9732%;margin-top:-14.3px;left:33.071%;width:96px;">
+			<p class="g-pstyle4">February</p>
+		</div>
+		<div id="g-ai2-22" class="g-ch_1 g-aiAbs g-aiPointText" style="top:80.9732%;margin-top:-14.3px;left:33.071%;width:96px;">
+			<p class="g-pstyle4">February</p>
+		</div>
+		<div id="g-ai2-23" class="g-ch_1 g-aiAbs" style="top:97.1126%;left:2.6802%;width:37.1622%;">
+			<p class="g-pstyle5">Source: Gun Violence Archive</p>
+		</div>
+	</div>
+
+</div>
+
+<!-- End ai2html - 2018-02-28 19:36 -->
+
 
 
 	<!--**************************-->
@@ -57,20 +523,1047 @@
 	<!--**************************-->
 	<!--**************************-->
 
-</div>
+
 
 	<p>Outrage aimed at NRA-funded politicians followed by little to no action has become a routine in the aftermath of shootings in recent years. The NRA has been too big and too powerful for gun control campaigners to make any headway for change. But that's where this latest chapter is different from the rest.
 	</p>
 
-	<p>In a <a href="https://poll.qu.edu/national/release-detail?ReleaseID=2521" target="_blank">Quinnipiac University</a> poll conducted last week, support for a number of gun control measures reached an all-time high from American voters. The Parkland shooting is not the first to target school children, nor is it the deadliest. But as public opinion on gun control moves into new territory, the status quo has begun to crack.
+<br>	
+
+	<p>A <a href="https://poll.qu.edu/national/release-detail?ReleaseID=2521" target="_blank">Quinnipiac University</a> poll conducted last week showed that support for a number of gun control measures reached an all-time high from American voters. The Parkland shooting is not the first to target school children, nor is it the deadliest, but as public opinion on gun control moves into new territory, the status quo has begun to crack.
 	</p>
 
-	<p><b>Enter chart two</b></p>
+<!--*****************-->
+<!--*****************-->
+<!--**Start ai2html**-->
+<!--*****************-->
+<!--*****************-->
+
+
+
+<!-- Generated by ai2html v0.66.4 - 2018-02-27 23:43 -->
+<!-- ai file: area.ai -->
+<style type='text/css' media='screen,print'>
+	#g-area-box .g-artboard {
+		margin:0 auto;
+	}
+	#g-area-box .g-artboard p {
+		margin:0;
+	}
+	.g-aiAbs {
+		position:absolute;
+	}
+	.g-aiImg {
+		display:block;
+		width:100% !important;
+	}
+	.g-aiPointText p { white-space: nowrap; }
+	#g-area-Artboard_1 {
+		position:relative;
+		overflow:hidden;
+		width:740px;
+	}
+	#g-area-Artboard_1 p {
+		font-weight:500;
+		font-size:16px;
+		line-height:19px;
+		filter:alpha(opacity=100);
+		-ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+		opacity:1;
+		letter-spacing:0em;
+		text-align:left;
+		color:rgb(0,0,0);
+		text-transform:none;
+		padding-bottom:0;
+		padding-top:0;
+		mix-blend-mode:normal;
+		font-style:normal;
+		height:auto;
+	}
+	#g-area-Artboard_1 .g-pstyle0 {
+		font-weight:700;
+		font-size:22px;
+		line-height:26px;
+	}
+	#g-area-Artboard_1 .g-pstyle1 {
+		font-weight:700;
+	}
+	#g-area-Artboard_1 .g-pstyle2 {
+		height:19px;
+	}
+	#g-area-Artboard_1 .g-pstyle3 {
+		height:19px;
+		text-align:right;
+	}
+	#g-area-Artboard_1 .g-pstyle4 {
+		text-align:right;
+	}
+	#g-area-Artboard_1 .g-pstyle5 {
+		font-size:12px;
+		line-height:14px;
+		color:rgb(187,176,167);
+	}
+	#g-area-Artboard_1 .g-cstyle0 {
+		font-size:13px;
+	}
+	#g-area-Artboard_2 {
+		position:relative;
+		overflow:hidden;
+		width:600px;
+	}
+	#g-area-Artboard_2 p {
+		font-weight:500;
+		font-size:15px;
+		line-height:18px;
+		filter:alpha(opacity=100);
+		-ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+		opacity:1;
+		letter-spacing:0em;
+		text-align:left;
+		color:rgb(0,0,0);
+		text-transform:none;
+		padding-bottom:0;
+		padding-top:0;
+		mix-blend-mode:normal;
+		font-style:normal;
+		height:auto;
+	}
+	#g-area-Artboard_2 .g-pstyle0 {
+		font-weight:700;
+		font-size:21px;
+		line-height:25px;
+	}
+	#g-area-Artboard_2 .g-pstyle1 {
+		font-weight:700;
+		font-size:16px;
+		line-height:19px;
+	}
+	#g-area-Artboard_2 .g-pstyle2 {
+		font-size:13px;
+		line-height:15px;
+		height:15px;
+	}
+	#g-area-Artboard_2 .g-pstyle3 {
+		font-size:13px;
+		line-height:15px;
+		height:15px;
+		text-align:right;
+	}
+	#g-area-Artboard_2 .g-pstyle4 {
+		font-size:13px;
+		line-height:15px;
+		text-align:right;
+	}
+	#g-area-Artboard_2 .g-pstyle5 {
+		font-size:10px;
+		line-height:12px;
+		color:rgb(187,176,167);
+	}
+	#g-area-Artboard_3 {
+		position:relative;
+		overflow:hidden;
+		width:320px;
+	}
+	#g-area-Artboard_3 p {
+		font-weight:500;
+		font-size:10px;
+		line-height:12px;
+		filter:alpha(opacity=100);
+		-ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+		opacity:1;
+		letter-spacing:0em;
+		text-align:left;
+		color:rgb(0,0,0);
+		text-transform:none;
+		padding-bottom:0;
+		padding-top:0;
+		mix-blend-mode:normal;
+		font-style:normal;
+		height:auto;
+	}
+	#g-area-Artboard_3 .g-pstyle0 {
+		font-weight:700;
+		font-size:13px;
+		line-height:16px;
+	}
+	#g-area-Artboard_3 .g-pstyle1 {
+		font-weight:700;
+		font-size:11px;
+		line-height:13px;
+	}
+	#g-area-Artboard_3 .g-pstyle2 {
+		font-size:7px;
+		line-height:8px;
+		height:8px;
+	}
+	#g-area-Artboard_3 .g-pstyle3 {
+		font-size:7px;
+		line-height:8px;
+		height:8px;
+		text-align:right;
+	}
+	#g-area-Artboard_3 .g-pstyle4 {
+		font-size:7px;
+		line-height:8px;
+		text-align:right;
+	}
+	#g-area-Artboard_3 .g-pstyle5 {
+		font-size:5px;
+		line-height:6px;
+		color:rgb(187,176,167);
+	}
+	#g-area-Artboard_3 .g-cstyle0 {
+		font-size:15px;
+	}
+
+</style>
+
+<div id="g-area-box" class="ai2html">
+
+	<!-- Artboard: Artboard_1 -->
+	<div id="g-area-Artboard_1" class="g-artboard g-artboard-v4" data-min-width='740'>
+		<img id="g-area-Artboard_1-img" class="g-aiImg" src="img/area-Artboard_1.png"/>
+		<div id="g-ai0-1" class="g-Layer_1 g-aiAbs" style="top:1.8476%;left:3.4499%;width:88.3784%;">
+			<p class="g-pstyle0">Support for gun control in America at all-time high</p>
+			<p>&nbsp;</p>
+			<p>Public opinion on multiple gun control measures, according to a Quinnipiac University poll, September 20, 2018 <span class="g-cstyle0"> </span></p>
+		</div>
+		<div id="g-ai0-2" class="g-Layer_1 g-aiAbs" style="top:10.9887%;left:50.4206%;width:41.4865%;">
+			<p class="g-pstyle1">Background Checks</p>
+		</div>
+		<div id="g-ai0-3" class="g-Layer_1 g-aiAbs" style="top:11.0859%;left:3.3148%;width:12.973%;">
+			<p class="g-pstyle1">Gun Laws</p>
+		</div>
+		<div id="g-ai0-4" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:13.8995%;margin-top:-9.9px;left:5.6616%;width:75px;">
+			<p class="g-pstyle2">Support</p>
+		</div>
+		<div id="g-ai0-5" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:13.8995%;margin-top:-9.9px;left:16.5832%;width:73px;">
+			<p class="g-pstyle2">Oppose</p>
+		</div>
+		<div id="g-ai0-6" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:13.8995%;margin-top:-9.9px;left:27.2055%;width:60px;">
+			<p class="g-pstyle2">Other</p>
+		</div>
+		<div id="g-ai0-7" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:13.8995%;margin-top:-9.9px;left:52.8569%;width:75px;">
+			<p class="g-pstyle2">Support</p>
+		</div>
+		<div id="g-ai0-8" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:13.8995%;margin-top:-9.9px;left:63.7784%;width:73px;">
+			<p class="g-pstyle2">Oppose</p>
+		</div>
+		<div id="g-ai0-9" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:13.8995%;margin-top:-9.9px;left:74.4008%;width:60px;">
+			<p class="g-pstyle2">Other</p>
+		</div>
+		<div id="g-ai0-10" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:16.8169%;margin-top:-9.9px;right:50.9239%;width:58px;">
+			<p class="g-pstyle3">100%</p>
+		</div>
+		<div id="g-ai0-11" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:16.8169%;margin-top:-9.9px;right:1.7009%;width:58px;">
+			<p class="g-pstyle3">100%</p>
+		</div>
+		<div id="g-ai0-12" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:23.235%;margin-top:-9.9px;right:53.6942%;width:38px;">
+			<p class="g-pstyle3">80</p>
+		</div>
+		<div id="g-ai0-13" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:23.235%;margin-top:-9.9px;right:4.4148%;width:38px;">
+			<p class="g-pstyle3">80</p>
+		</div>
+		<div id="g-ai0-14" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:29.6532%;margin-top:-9.9px;right:53.6942%;width:38px;">
+			<p class="g-pstyle3">60</p>
+		</div>
+		<div id="g-ai0-15" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:29.6532%;margin-top:-9.9px;right:4.4148%;width:38px;">
+			<p class="g-pstyle3">60</p>
+		</div>
+		<div id="g-ai0-16" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:36.0713%;margin-top:-9.9px;right:53.6942%;width:38px;">
+			<p class="g-pstyle3">40</p>
+		</div>
+		<div id="g-ai0-17" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:36.0713%;margin-top:-9.9px;right:4.4148%;width:38px;">
+			<p class="g-pstyle3">40</p>
+		</div>
+		<div id="g-ai0-18" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:42.4894%;margin-top:-9.9px;right:53.6942%;width:38px;">
+			<p class="g-pstyle3">20</p>
+		</div>
+		<div id="g-ai0-19" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:42.4894%;margin-top:-9.9px;right:4.4148%;width:38px;">
+			<p class="g-pstyle3">20</p>
+		</div>
+		<div id="g-ai0-20" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:48.5186%;margin-top:-9.9px;right:54.5973%;width:30px;">
+			<p class="g-pstyle3">0</p>
+		</div>
+		<div id="g-ai0-21" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:48.5186%;margin-top:-9.9px;right:5.4675%;width:30px;">
+			<p class="g-pstyle3">0</p>
+		</div>
+		<div id="g-ai0-22" class="g-Layer_1 g-aiAbs" style="top:49.9838%;right:92.3022%;width:4.4595%;">
+			<p class="g-pstyle4">2015</p>
+		</div>
+		<div id="g-ai0-23" class="g-Layer_1 g-aiAbs" style="top:49.9838%;right:57.3022%;width:4.4595%;">
+			<p class="g-pstyle4">2018</p>
+		</div>
+		<div id="g-ai0-24" class="g-Layer_1 g-aiAbs" style="top:49.9838%;right:45.0049%;width:4.4595%;">
+			<p class="g-pstyle4">2013</p>
+		</div>
+		<div id="g-ai0-25" class="g-Layer_1 g-aiAbs" style="top:49.9838%;right:8.0538%;width:4.4595%;">
+			<p class="g-pstyle4">2018</p>
+		</div>
+		<div id="g-ai0-26" class="g-Layer_1 g-aiAbs" style="top:54.9433%;left:3.3148%;width:22.4324%;">
+			<p class="g-pstyle1">Assault Weapons</p>
+		</div>
+		<div id="g-ai0-27" class="g-Layer_1 g-aiAbs" style="top:54.9433%;left:50.567%;width:35.2703%;">
+			<p class="g-pstyle1">Carrying Guns</p>
+		</div>
+		<div id="g-ai0-28" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:58.1458%;margin-top:-9.9px;left:52.9357%;width:80px;">
+			<p class="g-pstyle2">Less Safe</p>
+		</div>
+		<div id="g-ai0-29" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:58.1458%;margin-top:-9.9px;left:64.4557%;width:54px;">
+			<p class="g-pstyle2">Safer</p>
+		</div>
+		<div id="g-ai0-30" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:58.1458%;margin-top:-9.9px;left:72.6344%;width:60px;">
+			<p class="g-pstyle2">Other</p>
+		</div>
+		<div id="g-ai0-31" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:58.1458%;margin-top:-9.9px;left:5.6616%;width:75px;">
+			<p class="g-pstyle2">Support</p>
+		</div>
+		<div id="g-ai0-32" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:58.1458%;margin-top:-9.9px;left:16.5832%;width:73px;">
+			<p class="g-pstyle2">Oppose</p>
+		</div>
+		<div id="g-ai0-33" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:58.1458%;margin-top:-9.9px;left:27.2055%;width:60px;">
+			<p class="g-pstyle2">Other</p>
+		</div>
+		<div id="g-ai0-34" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:60.966%;margin-top:-9.9px;right:51.1941%;width:58px;">
+			<p class="g-pstyle3">100%</p>
+		</div>
+		<div id="g-ai0-35" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:60.966%;margin-top:-9.9px;right:1.7009%;width:58px;">
+			<p class="g-pstyle3">100%</p>
+		</div>
+		<div id="g-ai0-36" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:67.3841%;margin-top:-9.9px;right:4.395%;width:38px;">
+			<p class="g-pstyle3">80</p>
+		</div>
+		<div id="g-ai0-37" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:67.3841%;margin-top:-9.9px;right:53.8216%;width:38px;">
+			<p class="g-pstyle3">80</p>
+		</div>
+		<div id="g-ai0-38" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:73.8022%;margin-top:-9.9px;right:4.395%;width:38px;">
+			<p class="g-pstyle3">60</p>
+		</div>
+		<div id="g-ai0-39" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:73.8022%;margin-top:-9.9px;right:53.8216%;width:38px;">
+			<p class="g-pstyle3">60</p>
+		</div>
+		<div id="g-ai0-40" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:80.2204%;margin-top:-9.9px;right:4.395%;width:38px;">
+			<p class="g-pstyle3">40</p>
+		</div>
+		<div id="g-ai0-41" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:80.2204%;margin-top:-9.9px;right:53.8216%;width:38px;">
+			<p class="g-pstyle3">40</p>
+		</div>
+		<div id="g-ai0-42" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:86.6386%;margin-top:-9.9px;right:4.395%;width:38px;">
+			<p class="g-pstyle3">20</p>
+		</div>
+		<div id="g-ai0-43" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:86.7358%;margin-top:-9.9px;right:53.8216%;width:38px;">
+			<p class="g-pstyle3">20</p>
+		</div>
+		<div id="g-ai0-44" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:92.6677%;margin-top:-9.9px;right:5.2981%;width:30px;">
+			<p class="g-pstyle3">0</p>
+		</div>
+		<div id="g-ai0-45" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:92.6677%;margin-top:-9.9px;right:54.7247%;width:30px;">
+			<p class="g-pstyle3">0</p>
+		</div>
+		<div id="g-ai0-46" class="g-Layer_1 g-aiAbs" style="top:93.8412%;right:92.319%;width:4.4595%;">
+			<p class="g-pstyle4">2013</p>
+		</div>
+		<div id="g-ai0-47" class="g-Layer_1 g-aiAbs" style="top:93.8412%;right:57.3613%;width:4.4595%;">
+			<p class="g-pstyle4">2018</p>
+		</div>
+		<div id="g-ai0-48" class="g-Layer_1 g-aiAbs" style="top:93.8412%;right:45.0316%;width:4.4595%;">
+			<p class="g-pstyle4">2013</p>
+		</div>
+		<div id="g-ai0-49" class="g-Layer_1 g-aiAbs" style="top:93.8412%;right:7.9483%;width:4.4595%;">
+			<p class="g-pstyle4">2018</p>
+		</div>
+		<div id="g-ai0-50" class="g-Layer_1 g-aiAbs" style="top:96.7585%;left:3.3559%;width:30.4054%;">
+			<p class="g-pstyle5">Source: Gun Violence Archive</p>
+		</div>
+	</div>
+
+	<!-- Artboard: Artboard_2 -->
+	<div id="g-area-Artboard_2" class="g-artboard g-artboard-v4" data-min-width='600' data-max-width='739'>
+		<img id="g-area-Artboard_2-img" class="g-aiImg" src="img/area-Artboard_2.png"/>
+		<div id="g-ai1-1" class="g-Layer_1 g-aiAbs" style="top:2.2917%;left:3.5434%;width:109%;">
+			<p class="g-pstyle0">Support for gun control in America at all-time high</p>
+			<p>&nbsp;</p>
+			<p>Public opinion on multiple gun control measures, according to a Quinnipiac University </p>
+			<p>poll, September 20, 2018  </p>
+		</div>
+		<div id="g-ai1-2" class="g-Layer_1 g-aiAbs" style="top:12.8263%;left:50.4323%;width:46.5%;">
+			<p class="g-pstyle1">Background Checks</p>
+		</div>
+		<div id="g-ai1-3" class="g-Layer_1 g-aiAbs" style="top:12.8263%;left:3.3767%;width:16%;">
+			<p class="g-pstyle1">Gun Laws</p>
+		</div>
+		<div id="g-ai1-4" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:16.0985%;margin-top:-7.8px;left:5.7802%;width:65px;">
+			<p class="g-pstyle2">Support</p>
+		</div>
+		<div id="g-ai1-5" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:16.0985%;margin-top:-7.8px;left:16.6863%;width:63px;">
+			<p class="g-pstyle2">Oppose</p>
+		</div>
+		<div id="g-ai1-6" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:16.0985%;margin-top:-7.8px;left:27.2937%;width:52px;">
+			<p class="g-pstyle2">Other</p>
+		</div>
+		<div id="g-ai1-7" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:16.0985%;margin-top:-7.8px;left:52.9087%;width:65px;">
+			<p class="g-pstyle2">Support</p>
+		</div>
+		<div id="g-ai1-8" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:16.0985%;margin-top:-7.8px;left:63.8147%;width:63px;">
+			<p class="g-pstyle2">Oppose</p>
+		</div>
+		<div id="g-ai1-9" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:16.0985%;margin-top:-7.8px;left:74.4217%;width:52px;">
+			<p class="g-pstyle2">Other</p>
+		</div>
+		<div id="g-ai1-10" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:18.8227%;margin-top:-7.8px;right:50.8915%;width:51px;">
+			<p class="g-pstyle3">100%</p>
+		</div>
+		<div id="g-ai1-11" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:18.8227%;margin-top:-7.8px;right:1.7388%;width:51px;">
+			<p class="g-pstyle3">100%</p>
+		</div>
+		<div id="g-ai1-12" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:24.9521%;margin-top:-7.8px;right:53.6259%;width:35px;">
+			<p class="g-pstyle3">80</p>
+		</div>
+		<div id="g-ai1-13" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:24.9521%;margin-top:-7.8px;right:4.4164%;width:35px;">
+			<p class="g-pstyle3">80</p>
+		</div>
+		<div id="g-ai1-14" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:30.968%;margin-top:-7.8px;right:53.6259%;width:35px;">
+			<p class="g-pstyle3">60</p>
+		</div>
+		<div id="g-ai1-15" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:30.968%;margin-top:-7.8px;right:4.4164%;width:35px;">
+			<p class="g-pstyle3">60</p>
+		</div>
+		<div id="g-ai1-16" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:37.0974%;margin-top:-7.8px;right:53.6259%;width:35px;">
+			<p class="g-pstyle3">40</p>
+		</div>
+		<div id="g-ai1-17" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:37.0974%;margin-top:-7.8px;right:4.4164%;width:35px;">
+			<p class="g-pstyle3">40</p>
+		</div>
+		<div id="g-ai1-18" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:43.2268%;margin-top:-7.8px;right:53.6259%;width:35px;">
+			<p class="g-pstyle3">20</p>
+		</div>
+		<div id="g-ai1-19" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:43.2268%;margin-top:-7.8px;right:4.4164%;width:35px;">
+			<p class="g-pstyle3">20</p>
+		</div>
+		<div id="g-ai1-20" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:48.9022%;margin-top:-7.8px;right:54.6146%;width:28px;">
+			<p class="g-pstyle3">0</p>
+		</div>
+		<div id="g-ai1-21" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:48.9022%;margin-top:-7.8px;right:5.5547%;width:28px;">
+			<p class="g-pstyle3">0</p>
+		</div>
+		<div id="g-ai1-22" class="g-Layer_1 g-aiAbs" style="top:50.2838%;right:92.306%;width:4.3333%;">
+			<p class="g-pstyle4">2015</p>
+		</div>
+		<div id="g-ai1-23" class="g-Layer_1 g-aiAbs" style="top:50.2838%;right:57.3558%;width:4.3333%;">
+			<p class="g-pstyle4">2018</p>
+		</div>
+		<div id="g-ai1-24" class="g-Layer_1 g-aiAbs" style="top:50.2838%;right:45.076%;width:4.3333%;">
+			<p class="g-pstyle4">2013</p>
+		</div>
+		<div id="g-ai1-25" class="g-Layer_1 g-aiAbs" style="top:50.2838%;right:8.1776%;width:4.3333%;">
+			<p class="g-pstyle4">2018</p>
+		</div>
+		<div id="g-ai1-26" class="g-Layer_1 g-aiAbs" style="top:56.8456%;left:3.4323%;width:42.6667%;">
+			<p class="g-pstyle1">Assault Weapons</p>
+		</div>
+		<div id="g-ai1-27" class="g-Layer_1 g-aiAbs" style="top:56.8456%;left:50.6545%;width:38.8333%;">
+			<p class="g-pstyle1">Carrying Guns</p>
+		</div>
+		<div id="g-ai1-28" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:60.1394%;margin-top:-7.8px;left:52.9871%;width:69px;">
+			<p class="g-pstyle2">Less Safe</p>
+		</div>
+		<div id="g-ai1-29" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:60.1394%;margin-top:-7.8px;left:64.491%;width:48px;">
+			<p class="g-pstyle2">Safer</p>
+		</div>
+		<div id="g-ai1-30" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:60.1394%;margin-top:-7.8px;left:72.6577%;width:52px;">
+			<p class="g-pstyle2">Other</p>
+		</div>
+		<div id="g-ai1-31" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:60.1394%;margin-top:-7.8px;left:5.7802%;width:65px;">
+			<p class="g-pstyle2">Support</p>
+		</div>
+		<div id="g-ai1-32" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:60.1394%;margin-top:-7.8px;left:16.6863%;width:63px;">
+			<p class="g-pstyle2">Oppose</p>
+		</div>
+		<div id="g-ai1-33" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:60.1394%;margin-top:-7.8px;left:27.2937%;width:52px;">
+			<p class="g-pstyle2">Other</p>
+		</div>
+		<div id="g-ai1-34" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:62.8636%;margin-top:-7.8px;right:51.1617%;width:51px;">
+			<p class="g-pstyle3">100%</p>
+		</div>
+		<div id="g-ai1-35" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:62.8636%;margin-top:-7.8px;right:1.7388%;width:51px;">
+			<p class="g-pstyle3">100%</p>
+		</div>
+		<div id="g-ai1-36" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:68.8795%;margin-top:-7.8px;right:4.3967%;width:35px;">
+			<p class="g-pstyle3">80</p>
+		</div>
+		<div id="g-ai1-37" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:68.8795%;margin-top:-7.8px;right:53.753%;width:35px;">
+			<p class="g-pstyle3">80</p>
+		</div>
+		<div id="g-ai1-38" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:74.8954%;margin-top:-7.8px;right:4.3967%;width:35px;">
+			<p class="g-pstyle3">60</p>
+		</div>
+		<div id="g-ai1-39" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:74.8954%;margin-top:-7.8px;right:53.753%;width:35px;">
+			<p class="g-pstyle3">60</p>
+		</div>
+		<div id="g-ai1-40" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:81.0248%;margin-top:-7.8px;right:4.3967%;width:35px;">
+			<p class="g-pstyle3">40</p>
+		</div>
+		<div id="g-ai1-41" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:81.0248%;margin-top:-7.8px;right:53.753%;width:35px;">
+			<p class="g-pstyle3">40</p>
+		</div>
+		<div id="g-ai1-42" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:87.1542%;margin-top:-7.8px;right:4.3967%;width:35px;">
+			<p class="g-pstyle3">20</p>
+		</div>
+		<div id="g-ai1-43" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:87.1542%;margin-top:-7.8px;right:53.753%;width:35px;">
+			<p class="g-pstyle3">20</p>
+		</div>
+		<div id="g-ai1-44" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:92.8295%;margin-top:-7.8px;right:5.3858%;width:28px;">
+			<p class="g-pstyle3">0</p>
+		</div>
+		<div id="g-ai1-45" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:92.8295%;margin-top:-7.8px;right:54.7419%;width:28px;">
+			<p class="g-pstyle3">0</p>
+		</div>
+		<div id="g-ai1-46" class="g-Layer_1 g-aiAbs" style="top:93.8706%;right:92.3229%;width:4.3333%;">
+			<p class="g-pstyle4">2013</p>
+		</div>
+		<div id="g-ai1-47" class="g-Layer_1 g-aiAbs" style="top:93.8706%;right:57.4149%;width:4.3333%;">
+			<p class="g-pstyle4">2018</p>
+		</div>
+		<div id="g-ai1-48" class="g-Layer_1 g-aiAbs" style="top:93.8706%;right:45.1027%;width:4.3333%;">
+			<p class="g-pstyle4">2013</p>
+		</div>
+		<div id="g-ai1-49" class="g-Layer_1 g-aiAbs" style="top:93.8706%;right:8.0722%;width:4.3333%;">
+			<p class="g-pstyle4">2018</p>
+		</div>
+		<div id="g-ai1-50" class="g-Layer_1 g-aiAbs" style="top:96.7083%;left:3.478%;width:30.3333%;">
+			<p class="g-pstyle5">Source: Gun Violence Archive</p>
+		</div>
+	</div>
+
+	<!-- Artboard: Artboard_3 -->
+	<div id="g-area-Artboard_3" class="g-artboard g-artboard-v4" data-min-width='320' data-max-width='599'>
+		<img id="g-area-Artboard_3-img" class="g-aiImg" src="img/area-Artboard_3.png"/>
+		<div id="g-ai2-1" class="g-Layer_1 g-aiAbs" style="top:0.6042%;left:1.4759%;width:97.1875%;">
+			<p class="g-pstyle0">Support for gun control in America at all-time high</p>
+			<p>&nbsp;</p>
+			<p>Public opinion on multiple gun control measures, according to a </p>
+			<p>Quinnipiac University poll, September 20, 2018 <span class="g-cstyle0"> </span></p>
+		</div>
+		<div id="g-ai2-2" class="g-Layer_1 g-aiAbs" style="top:17.1239%;left:1.4759%;width:30%;">
+			<p class="g-pstyle1">Gun Laws</p>
+		</div>
+		<div id="g-ai2-3" class="g-Layer_1 g-aiAbs" style="top:17.1239%;left:49.1322%;width:37.1875%;">
+			<p class="g-pstyle1">Background Checks</p>
+		</div>
+		<div id="g-ai2-4" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:20.5175%;margin-top:-0.6px;left:4.2045%;width:45px;">
+			<p class="g-pstyle2">Support</p>
+		</div>
+		<div id="g-ai2-5" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:20.5175%;margin-top:-0.6px;left:15.1698%;width:44px;">
+			<p class="g-pstyle2">Oppose</p>
+		</div>
+		<div id="g-ai2-6" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:20.5175%;margin-top:-0.6px;left:25.8351%;width:38px;">
+			<p class="g-pstyle2">Other</p>
+		</div>
+		<div id="g-ai2-7" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:20.5175%;margin-top:-0.6px;left:51.5898%;width:45px;">
+			<p class="g-pstyle2">Support</p>
+		</div>
+		<div id="g-ai2-8" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:20.5175%;margin-top:-0.6px;left:62.5553%;width:44px;">
+			<p class="g-pstyle2">Oppose</p>
+		</div>
+		<div id="g-ai2-9" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:20.5175%;margin-top:-0.6px;left:73.2197%;width:38px;">
+			<p class="g-pstyle2">Other</p>
+		</div>
+		<div id="g-ai2-10" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:22.9836%;margin-top:-1.2px;right:52.0907%;width:38px;">
+			<p class="g-pstyle3">100%</p>
+		</div>
+		<div id="g-ai2-11" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:22.9836%;margin-top:-1.2px;right:2.6702%;width:38px;">
+			<p class="g-pstyle3">100%</p>
+		</div>
+		<div id="g-ai2-12" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:28.4847%;margin-top:0px;right:54.9715%;width:29px;">
+			<p class="g-pstyle3">80</p>
+		</div>
+		<div id="g-ai2-13" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:28.4847%;margin-top:0px;right:5.4937%;width:29px;">
+			<p class="g-pstyle3">80</p>
+		</div>
+		<div id="g-ai2-14" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:33.7961%;margin-top:1.5px;right:54.9715%;width:29px;">
+			<p class="g-pstyle3">60</p>
+		</div>
+		<div id="g-ai2-15" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:33.7961%;margin-top:1.5px;right:5.4937%;width:29px;">
+			<p class="g-pstyle3">60</p>
+		</div>
+		<div id="g-ai2-16" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:39.2972%;margin-top:1px;right:54.9715%;width:29px;">
+			<p class="g-pstyle3">40</p>
+		</div>
+		<div id="g-ai2-17" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:39.2972%;margin-top:1px;right:5.4937%;width:29px;">
+			<p class="g-pstyle3">40</p>
+		</div>
+		<div id="g-ai2-18" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:44.7983%;margin-top:2.5px;right:54.9715%;width:29px;">
+			<p class="g-pstyle3">20</p>
+		</div>
+		<div id="g-ai2-19" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:44.7983%;margin-top:2.5px;right:5.4937%;width:29px;">
+			<p class="g-pstyle3">20</p>
+		</div>
+		<div id="g-ai2-20" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:49.92%;margin-top:3.5px;right:56.0427%;width:25px;">
+			<p class="g-pstyle3">0</p>
+		</div>
+		<div id="g-ai2-21" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:49.92%;margin-top:3.5px;right:6.7153%;width:25px;">
+			<p class="g-pstyle3">0</p>
+		</div>
+		<div id="g-ai2-22" class="g-Layer_1 g-aiAbs" style="top:53.0275%;right:93.8538%;width:4.375%;">
+			<p class="g-pstyle4">2015</p>
+		</div>
+		<div id="g-ai2-23" class="g-Layer_1 g-aiAbs" style="top:53.0275%;right:58.7131%;width:4.375%;">
+			<p class="g-pstyle4">2018</p>
+		</div>
+		<div id="g-ai2-24" class="g-Layer_1 g-aiAbs" style="top:53.0275%;right:46.3663%;width:4.375%;">
+			<p class="g-pstyle4">2013</p>
+		</div>
+		<div id="g-ai2-25" class="g-Layer_1 g-aiAbs" style="top:53.0275%;right:9.2667%;width:4.375%;">
+			<p class="g-pstyle4">2018</p>
+		</div>
+		<div id="g-ai2-26" class="g-Layer_1 g-aiAbs" style="top:57.9698%;left:1.9836%;width:50%;">
+			<p class="g-pstyle1">Assault Weapons</p>
+		</div>
+		<div id="g-ai2-27" class="g-Layer_1 g-aiAbs" style="top:57.9698%;left:49.1997%;width:45.3125%;">
+			<p class="g-pstyle1">Carrying Guns</p>
+		</div>
+		<div id="g-ai2-28" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:60.3531%;margin-top:6px;left:51.6685%;width:47px;">
+			<p class="g-pstyle2">Less Safe</p>
+		</div>
+		<div id="g-ai2-29" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:60.3531%;margin-top:6px;left:63.2353%;width:36px;">
+			<p class="g-pstyle2">Safer</p>
+		</div>
+		<div id="g-ai2-30" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:60.3531%;margin-top:6px;left:71.4466%;width:38px;">
+			<p class="g-pstyle2">Other</p>
+		</div>
+		<div id="g-ai2-31" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:60.3531%;margin-top:6px;left:4.2045%;width:45px;">
+			<p class="g-pstyle2">Support</p>
+		</div>
+		<div id="g-ai2-32" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:60.3531%;margin-top:6px;left:15.1698%;width:44px;">
+			<p class="g-pstyle2">Oppose</p>
+		</div>
+		<div id="g-ai2-33" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:60.3531%;margin-top:6px;left:25.8351%;width:38px;">
+			<p class="g-pstyle2">Other</p>
+		</div>
+		<div id="g-ai2-34" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:62.8192%;margin-top:4.7px;right:52.3623%;width:38px;">
+			<p class="g-pstyle3">100%</p>
+		</div>
+		<div id="g-ai2-35" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:62.8192%;margin-top:4.7px;right:2.6702%;width:38px;">
+			<p class="g-pstyle3">100%</p>
+		</div>
+		<div id="g-ai2-36" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:68.1306%;margin-top:8px;right:5.4738%;width:29px;">
+			<p class="g-pstyle3">80</p>
+		</div>
+		<div id="g-ai2-37" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:68.1306%;margin-top:8px;right:55.0994%;width:29px;">
+			<p class="g-pstyle3">80</p>
+		</div>
+		<div id="g-ai2-38" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:73.6317%;margin-top:7.5px;right:5.4738%;width:29px;">
+			<p class="g-pstyle3">60</p>
+		</div>
+		<div id="g-ai2-39" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:73.6317%;margin-top:7.5px;right:55.0994%;width:29px;">
+			<p class="g-pstyle3">60</p>
+		</div>
+		<div id="g-ai2-40" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:79.1328%;margin-top:7px;right:5.4738%;width:29px;">
+			<p class="g-pstyle3">40</p>
+		</div>
+		<div id="g-ai2-41" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:79.1328%;margin-top:7px;right:55.0994%;width:29px;">
+			<p class="g-pstyle3">40</p>
+		</div>
+		<div id="g-ai2-42" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:84.4442%;margin-top:9.3px;right:5.4738%;width:29px;">
+			<p class="g-pstyle3">20</p>
+		</div>
+		<div id="g-ai2-43" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:84.4442%;margin-top:9.3px;right:55.0994%;width:29px;">
+			<p class="g-pstyle3">20</p>
+		</div>
+		<div id="g-ai2-44" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:89.5659%;margin-top:10px;right:6.5453%;width:25px;">
+			<p class="g-pstyle3">0</p>
+		</div>
+		<div id="g-ai2-45" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:89.5659%;margin-top:10px;right:56.1705%;width:25px;">
+			<p class="g-pstyle3">0</p>
+		</div>
+		<div id="g-ai2-46" class="g-Layer_1 g-aiAbs" style="top:93.6734%;right:93.8708%;width:4.375%;">
+			<p class="g-pstyle4">2013</p>
+		</div>
+		<div id="g-ai2-47" class="g-Layer_1 g-aiAbs" style="top:93.6734%;right:58.7724%;width:4.375%;">
+			<p class="g-pstyle4">2018</p>
+		</div>
+		<div id="g-ai2-48" class="g-Layer_1 g-aiAbs" style="top:93.6734%;right:46.3932%;width:4.375%;">
+			<p class="g-pstyle4">2013</p>
+		</div>
+		<div id="g-ai2-49" class="g-Layer_1 g-aiAbs" style="top:93.6734%;right:9.1607%;width:4.375%;">
+			<p class="g-pstyle4">2018</p>
+		</div>
+		<div id="g-ai2-50" class="g-Layer_1 g-aiAbs" style="top:96.2261%;left:1.8891%;width:40.3125%;">
+			<p class="g-pstyle5">Source: Gun Violence Archive</p>
+		</div>
+	</div>
+
+</div>
+
+<!-- End ai2html - 2018-02-27 23:43 -->
+
+<!--*****************-->
+<!--*****************-->
+<!--***END ai2html***-->
+<!--*****************-->
+<!--*****************-->
 
 	<p>Interest in gun control unsurprisingly spikes immediately after a mass shooting and normally lasts for xxx days. But two weeks after Parkland and internet searches for gun control remain above average. In the social media era &#8212; Twitter's monthly users have almost doubled to 330 million since 2012 &#8212; activists have found a way to keep the topic of stricter gun control laws in the public conversation.
 	</p>
+<br>
 
-	<p><b>Enter chart three</b></p>
+<!--*****************-->
+<!--*****************-->
+<!--**Start ai2html**-->
+<!--*****************-->
+<!--*****************-->	
+
+
+
+<!-- Generated by ai2html v0.66.4 - 2018-02-28 01:26 -->
+<!-- ai file: google.ai -->
+<style type='text/css' media='screen,print'>
+	#g-google-box .g-artboard {
+		margin:0 auto;
+	}
+	#g-google-box .g-artboard p {
+		margin:0;
+	}
+	.g-aiAbs {
+		position:absolute;
+	}
+	.g-aiImg {
+		display:block;
+		width:100% !important;
+	}
+	.g-aiPointText p { white-space: nowrap; }
+	#g-google-Large {
+		position:relative;
+		overflow:hidden;
+		width:740px;
+	}
+	#g-google-Large p {
+		font-weight:500;
+		font-size:12px;
+		line-height:14px;
+		height:auto;
+		filter:alpha(opacity=100);
+		-ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+		opacity:1;
+		letter-spacing:0em;
+		text-align:left;
+		color:rgb(0,0,0);
+		text-transform:none;
+		padding-bottom:0;
+		padding-top:0;
+		mix-blend-mode:normal;
+		font-style:normal;
+	}
+	#g-google-Large .g-pstyle0 {
+		font-weight:700;
+		font-size:22px;
+		line-height:26px;
+	}
+	#g-google-Large .g-pstyle1 {
+		font-size:16px;
+		line-height:19px;
+	}
+	#g-google-Large .g-pstyle2 {
+		font-weight:700;
+		font-size:16px;
+		line-height:19px;
+		height:19px;
+		text-align:center;
+	}
+	#g-google-Large .g-pstyle3 {
+		font-weight:700;
+		font-size:16px;
+		line-height:19px;
+		height:19px;
+	}
+	#g-google-Large .g-pstyle4 {
+		height:14px;
+		text-align:right;
+	}
+	#g-google-Large .g-pstyle5 {
+		color:rgb(186,175,166);
+	}
+	#g-google-Large .g-pstyle6 {
+		height:14px;
+	}
+	#g-google-Medium {
+		position:relative;
+		overflow:hidden;
+		width:600px;
+	}
+	#g-google-Medium p {
+		font-weight:500;
+		font-size:10px;
+		line-height:12px;
+		height:auto;
+		filter:alpha(opacity=100);
+		-ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+		opacity:1;
+		letter-spacing:0em;
+		text-align:left;
+		color:rgb(0,0,0);
+		text-transform:none;
+		padding-bottom:0;
+		padding-top:0;
+		mix-blend-mode:normal;
+		font-style:normal;
+	}
+	#g-google-Medium .g-pstyle0 {
+		font-weight:700;
+		font-size:20px;
+		line-height:24px;
+	}
+	#g-google-Medium .g-pstyle1 {
+		font-size:14px;
+		line-height:17px;
+	}
+	#g-google-Medium .g-pstyle2 {
+		font-weight:700;
+		font-size:14px;
+		line-height:17px;
+		height:17px;
+		text-align:center;
+	}
+	#g-google-Medium .g-pstyle3 {
+		font-weight:700;
+		font-size:14px;
+		line-height:17px;
+		height:17px;
+	}
+	#g-google-Medium .g-pstyle4 {
+		height:12px;
+		text-align:right;
+	}
+	#g-google-Medium .g-pstyle5 {
+		color:rgb(186,175,166);
+	}
+	#g-google-Medium .g-pstyle6 {
+		height:12px;
+	}
+	#g-google-Small {
+		position:relative;
+		overflow:hidden;
+		width:320px;
+	}
+	#g-google-Small p {
+		font-weight:500;
+		font-size:6px;
+		line-height:7px;
+		height:auto;
+		filter:alpha(opacity=100);
+		-ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+		opacity:1;
+		letter-spacing:0em;
+		text-align:left;
+		color:rgb(0,0,0);
+		text-transform:none;
+		padding-bottom:0;
+		padding-top:0;
+		mix-blend-mode:normal;
+		font-style:normal;
+	}
+	#g-google-Small .g-pstyle0 {
+		font-weight:700;
+		font-size:12px;
+		line-height:14px;
+	}
+	#g-google-Small .g-pstyle1 {
+		font-size:8px;
+		line-height:10px;
+	}
+	#g-google-Small .g-pstyle2 {
+		font-weight:700;
+		font-size:8px;
+		line-height:10px;
+		height:10px;
+		text-align:center;
+	}
+	#g-google-Small .g-pstyle3 {
+		font-weight:700;
+		font-size:8px;
+		line-height:10px;
+		height:10px;
+	}
+	#g-google-Small .g-pstyle4 {
+		height:7px;
+		text-align:right;
+	}
+	#g-google-Small .g-pstyle5 {
+		color:rgb(186,175,166);
+	}
+	#g-google-Small .g-pstyle6 {
+		height:7px;
+	}
+
+</style>
+
+<div id="g-google-box" class="ai2html">
+
+	<!-- Artboard: Large -->
+	<div id="g-google-Large" class="g-artboard g-artboard-v4" data-min-width='740'>
+		<img id="g-google-Large-img" class="g-aiImg" src="img/google-Small.png"/>
+		<div id="g-ai0-1" class="g-Layer_1 g-aiAbs" style="top:5.796%;left:7.0685%;width:88.3784%;">
+			<p class="g-pstyle0">This time might be different</p>
+			<p>&nbsp;</p>
+			<p class="g-pstyle1">Average interest in gun control from the first to second week after the five deadliest mass shootings since 2012, according to Google Trends.</p>
+		</div>
+		<div id="g-ai0-2" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:27.9721%;margin-top:-21.8px;left:69.3202%;margin-left:-55px;width:110px;">
+			<p class="g-pstyle2">Sutherland </p>
+			<p class="g-pstyle2">Springs</p>
+		</div>
+		<div id="g-ai0-3" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:30.2422%;margin-top:-12.2px;left:7.0234%;width:114px;">
+			<p class="g-pstyle3">Sandy Hook</p>
+		</div>
+		<div id="g-ai0-4" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:30.2422%;margin-top:-12.2px;left:27.4626%;width:83px;">
+			<p class="g-pstyle3">Orlando</p>
+		</div>
+		<div id="g-ai0-5" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:30.2422%;margin-top:-12.2px;left:45.1315%;width:100px;">
+			<p class="g-pstyle3">Las Vegas</p>
+		</div>
+		<div id="g-ai0-6" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:30.2422%;margin-top:-12.2px;left:83.645%;width:90px;">
+			<p class="g-pstyle3">Parkland</p>
+		</div>
+		<div id="g-ai0-7" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:32.7285%;margin-top:-7.5px;right:95.0834%;width:40px;">
+			<p class="g-pstyle4">100</p>
+		</div>
+		<div id="g-ai0-8" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:42.3885%;margin-top:-7.5px;right:95.0623%;width:34px;">
+			<p class="g-pstyle4">80</p>
+		</div>
+		<div id="g-ai0-9" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:51.807%;margin-top:-7.5px;right:95.0623%;width:34px;">
+			<p class="g-pstyle4">60</p>
+		</div>
+		<div id="g-ai0-10" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:61.467%;margin-top:-7.5px;right:95.0623%;width:34px;">
+			<p class="g-pstyle4">40</p>
+		</div>
+		<div id="g-ai0-11" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:71.127%;margin-top:-7.5px;right:95.0623%;width:34px;">
+			<p class="g-pstyle4">20</p>
+		</div>
+		<div id="g-ai0-12" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:80.0625%;margin-top:-7.5px;right:95.0413%;width:28px;">
+			<p class="g-pstyle4">0</p>
+		</div>
+		<div id="g-ai0-13" class="g-Layer_1 g-aiAbs" style="top:85.2495%;left:6.2987%;width:20.4054%;">
+			<p class="g-pstyle5">Source: Google Trends</p>
+		</div>
+		<div id="g-ai0-14" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:92.4274%;margin-top:-14.7px;left:6.3212%;width:671px;">
+			<p class="g-pstyle6">Note: Numbers represent search interest for a given period of time. A value of 100 is peak popularity;  A value of 50 means that the </p>
+			<p class="g-pstyle6">term is half as popular. A score of 0 means there was not enough data.</p>
+		</div>
+	</div>
+
+	<!-- Artboard: Medium -->
+	<div id="g-google-Medium" class="g-artboard g-artboard-v4" data-min-width='600' data-max-width='739'>
+		<img id="g-google-Medium-img" class="g-aiImg" src="img/google-Medium.png"/>
+		<div id="g-ai1-1" class="g-Layer_1 g-aiAbs" style="top:5.1259%;left:4.1356%;width:91.8333%;">
+			<p class="g-pstyle0">This time might be different</p>
+			<p>&nbsp;</p>
+			<p class="g-pstyle1">Average interest in gun control from the first to second week after the five deadliest mass shootings since 2012, according to Google Trends.</p>
+		</div>
+		<div id="g-ai1-2" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:31.6418%;margin-top:-19.3px;left:68.9117%;margin-left:-49.5px;width:99px;">
+			<p class="g-pstyle2">Sutherland </p>
+			<p class="g-pstyle2">Springs</p>
+		</div>
+		<div id="g-ai1-3" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:33.6922%;margin-top:-10.9px;left:4.0889%;width:103px;">
+			<p class="g-pstyle3">Sandy Hook</p>
+		</div>
+		<div id="g-ai1-4" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:33.6922%;margin-top:-10.9px;left:25.3021%;width:76px;">
+			<p class="g-pstyle3">Orlando</p>
+		</div>
+		<div id="g-ai1-5" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:33.6922%;margin-top:-10.9px;left:43.6403%;width:90px;">
+			<p class="g-pstyle3">Las Vegas</p>
+		</div>
+		<div id="g-ai1-6" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:33.6922%;margin-top:-10.9px;left:83.6125%;width:81px;">
+			<p class="g-pstyle3">Parkland</p>
+		</div>
+		<div id="g-ai1-7" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:35.9987%;margin-top:-6.4px;right:97.9305%;width:37px;">
+			<p class="g-pstyle4">100</p>
+		</div>
+		<div id="g-ai1-8" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:44.9015%;margin-top:-6.4px;right:97.9088%;width:32px;">
+			<p class="g-pstyle4">80</p>
+		</div>
+		<div id="g-ai1-9" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:53.8044%;margin-top:-6.4px;right:97.9088%;width:32px;">
+			<p class="g-pstyle4">60</p>
+		</div>
+		<div id="g-ai1-10" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:62.9771%;margin-top:-6.4px;right:97.9088%;width:32px;">
+			<p class="g-pstyle4">40</p>
+		</div>
+		<div id="g-ai1-11" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:71.88%;margin-top:-6.4px;right:97.9088%;width:32px;">
+			<p class="g-pstyle4">20</p>
+		</div>
+		<div id="g-ai1-12" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:80.2433%;margin-top:-6.4px;right:97.8872%;width:27px;">
+			<p class="g-pstyle4">0</p>
+		</div>
+		<div id="g-ai1-13" class="g-Layer_1 g-aiAbs" style="top:85.2518%;left:3.5034%;width:21.1667%;">
+			<p class="g-pstyle5">Source: Google Trends</p>
+		</div>
+		<div id="g-ai1-14" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:91.8743%;margin-top:-12.5px;left:3.5267%;width:568px;">
+			<p class="g-pstyle6">Note: Numbers represent search interest for a given period of time. A value of 100 is peak popularity;  A value of 50 means that the </p>
+			<p class="g-pstyle6">term is half as popular. A score of 0 means there was not enough data.</p>
+		</div>
+	</div>
+
+	<!-- Artboard: Small -->
+	<div id="g-google-Small" class="g-artboard g-artboard-v4" data-min-width='320' data-max-width='599'>
+		<img id="g-google-Small-img" class="g-aiImg" src="img/google-Small.png"/>
+		<div id="g-ai2-1" class="g-Layer_1 g-aiAbs" style="top:8.9905%;left:5.8459%;width:91.25%;">
+			<p class="g-pstyle0">This time might be different</p>
+			<p>&nbsp;</p>
+			<p class="g-pstyle1">Average interest in gun control from the first to second week after the five deadliest mass shootings since 2012, according to Google Trends.</p>
+		</div>
+		<div id="g-ai2-2" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:35.0929%;margin-top:-11.2px;left:70.7611%;margin-left:-33px;width:66px;">
+			<p class="g-pstyle2">Sutherland </p>
+			<p class="g-pstyle2">Springs</p>
+		</div>
+		<div id="g-ai2-3" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:37.0804%;margin-top:-6.4px;left:5.7996%;width:68px;">
+			<p class="g-pstyle3">Sandy Hook</p>
+		</div>
+		<div id="g-ai2-4" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:37.0804%;margin-top:-6.4px;left:26.9318%;width:53px;">
+			<p class="g-pstyle3">Orlando</p>
+		</div>
+		<div id="g-ai2-5" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:37.0804%;margin-top:-6.4px;left:44.9762%;width:61px;">
+			<p class="g-pstyle3">Las Vegas</p>
+		</div>
+		<div id="g-ai2-6" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:37.0804%;margin-top:-6.4px;left:85.0391%;width:56px;">
+			<p class="g-pstyle3">Parkland</p>
+		</div>
+		<div id="g-ai2-7" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:39.1615%;margin-top:-3.8px;right:95.5881%;width:31px;">
+			<p class="g-pstyle4">100</p>
+		</div>
+		<div id="g-ai2-8" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:47.6788%;margin-top:-3.8px;right:95.564%;width:28px;">
+			<p class="g-pstyle4">80</p>
+		</div>
+		<div id="g-ai2-9" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:55.723%;margin-top:-3.8px;right:95.564%;width:28px;">
+			<p class="g-pstyle4">60</p>
+		</div>
+		<div id="g-ai2-10" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:64.2403%;margin-top:-3.8px;right:95.564%;width:28px;">
+			<p class="g-pstyle4">40</p>
+		</div>
+		<div id="g-ai2-11" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:72.7577%;margin-top:-3.8px;right:95.564%;width:28px;">
+			<p class="g-pstyle4">20</p>
+		</div>
+		<div id="g-ai2-12" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:80.3287%;margin-top:-3.8px;right:95.5396%;width:25px;">
+			<p class="g-pstyle4">0</p>
+		</div>
+		<div id="g-ai2-13" class="g-Layer_1 g-aiAbs" style="top:85.1735%;left:5.8435%;width:18.4375%;">
+			<p class="g-pstyle5">Source: Google Trends</p>
+		</div>
+		<div id="g-ai2-14" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:92.4423%;margin-top:-7.4px;left:5.8667%;width:308px;">
+			<p class="g-pstyle6">Note: Numbers represent search interest for a given period of time. A value of 100 is peak popularity;  A value of 50 </p>
+			<p class="g-pstyle6">means that the term is half as popular. A score of 0 means there was not enough data.</p>
+		</div>
+	</div>
+
+</div>
+
+<br>
+
+<!-- End ai2html - 2018-02-28 01:26 -->
+
+
+<!--*****************-->
+<!--*****************-->
+<!--***END ai2html***-->
+<!--*****************-->
+<!--*****************-->
 
 	<p>The gun control debate will inevitably cool down as each week passes, but the fact that corporate America has started to switch tack and act is cause for optimism for the <a href="https://www.ft.com/content/9341021e-1818-11e8-9376-4a6390addb44" target="_blank">#NeverAgain</a> movement and anyone pushing for stricter gun laws.</p>
 
