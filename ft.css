@@ -4,7 +4,7 @@ BODY {
 
 H1 {
 	text-align: center;
-	font-size: 28px;
+	font-size: 32px;
 	line-height: 32px;
 	font-family: FinancierDisplayWeb, serif;
 	color: #33302e;
@@ -47,10 +47,9 @@ P { text-align: left;
     line-height: 2em; }
 
 HR {
-	
+	color: black;
 	max-width: 700px;
 	width: 100%;
-	margin-left: 120px;
 	margin-top: 20px;
 }
 
