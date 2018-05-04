@@ -4792,7 +4792,7 @@ g#xAxisG text, g#yAxisG text {
 <p><p>
 <br>
 
-<!--<ul class="legend">
+<ul class="legend">
     <li><span class="nofacilities circle"></span>2017-18 Rockets</li>
     <li><span class="facilities"></span>2017-18 Warriors</li>
 </ul>
@@ -4807,253 +4807,253 @@ g#xAxisG text, g#yAxisG text {
 </div>
 <script>
 
-//********FIRST SCATTERPLOT********
+********FIRST SCATTERPLOT********
 
-// var marginFour = {top: 20, right: 20, bottom: 30, left: 40},
-//     widthFour = 500 - marginFour.left - marginFour.right,
-//     heightFour = 360 - marginFour.top - marginFour.bottom;
+var marginFour = {top: 20, right: 20, bottom: 30, left: 40},
+    widthFour = 500 - marginFour.left - marginFour.right,
+    heightFour = 360 - marginFour.top - marginFour.bottom;
 
-// /* 
-//  * value accessor - returns the value to encode for a given data object.
-//  * scale - maps value to a visual display encoding, such as a pixel position.
-//  * map function - maps from data value to display value
-//  * axis - sets up axis
-//  */ 
+/* 
+ * value accessor - returns the value to encode for a given data object.
+ * scale - maps value to a visual display encoding, such as a pixel position.
+ * map function - maps from data value to display value
+ * axis - sets up axis
+ */ 
 
-// // setup x 
-// var xValueFour = function(d) { return d.eFG;}, // data -> value
-//     xScaleFour = d3.scale.linear().range([0, widthFour]), // value -> display
-//     xMapFour = function(d) { return xScaleFour(xValueFour(d));}, // data -> display
-//     xAxisFour = d3.svg.axis().scale(xScaleFour).orient("bottom").tickSize(-heightFour);
+// setup x 
+var xValueFour = function(d) { return d.eFG;}, // data -> value
+    xScaleFour = d3.scale.linear().range([0, widthFour]), // value -> display
+    xMapFour = function(d) { return xScaleFour(xValueFour(d));}, // data -> display
+    xAxisFour = d3.svg.axis().scale(xScaleFour).orient("bottom").tickSize(-heightFour);
 
-// // setup y
-// var yValueFour = function(d) { return d["ORtg"];}, // data -> value
-//     yScaleFour = d3.scale.linear().range([heightFour, 25]), // value -> display
-//     yMapFour = function(d) { return yScaleFour(yValueFour(d));}, // data -> display
-//     yAxisFour = d3.svg.axis().scale(yScaleFour).orient("left").tickSize(-widthFour).ticks(6).tickValues([92,97,102,107,112,117,]);
+// setup y
+var yValueFour = function(d) { return d["ORtg"];}, // data -> value
+    yScaleFour = d3.scale.linear().range([heightFour, 25]), // value -> display
+    yMapFour = function(d) { return yScaleFour(yValueFour(d));}, // data -> display
+    yAxisFour = d3.svg.axis().scale(yScaleFour).orient("left").tickSize(-widthFour).ticks(6).tickValues([92,97,102,107,112,117,]);
 
-// // setup fill color
-// //var cValue = function(d) { return d.Manufacturer;},
-// var colorFour = d3.scale.category20();
+// setup fill color
+//var cValue = function(d) { return d.Manufacturer;},
+var colorFour = d3.scale.category20();
 
-// function colorFilterFour(d){
-//     if (d.Team === "Houston Rockets" && d.Season === "2017-18") {
-//         return "#CE1141"; 
-//      }  else if (d.Team === "Golden State Warriors" && d.Season === "2017-18") {
-//         return "#FFCD34";
-//      }  else {
-//         return "#f0f0f0";
-//      }
-//      };
+function colorFilterFour(d){
+    if (d.Team === "Houston Rockets" && d.Season === "2017-18") {
+        return "#CE1141"; 
+     }  else if (d.Team === "Golden State Warriors" && d.Season === "2017-18") {
+        return "#FFCD34";
+     }  else {
+        return "#f0f0f0";
+     }
+     };
 
-// // add the graph canvas to the body of the webpage
-// var svgFour = d3.select("#area1")
-//     .append("svg")
-//     .attr("width", widthFour + marginFour.left + marginFour.right)
-//     .attr("height", heightFour + marginFour.top + marginFour.bottom)
-//     .append("g")
-//     .attr("transform", "translate(" + marginFour.left + "," + marginFour.top + ")");
+// add the graph canvas to the body of the webpage
+var svgFour = d3.select("#area1")
+    .append("svg")
+    .attr("width", widthFour + marginFour.left + marginFour.right)
+    .attr("height", heightFour + marginFour.top + marginFour.bottom)
+    .append("g")
+    .attr("transform", "translate(" + marginFour.left + "," + marginFour.top + ")");
 
-// // add the tooltip area to the webpage
-// var tooltipTwo = d3.select("body").append("div")
-//     .attr("class", "tooltiptwo")
-//     .style("opacity", 0);
+// add the tooltip area to the webpage
+var tooltipTwo = d3.select("body").append("div")
+    .attr("class", "tooltiptwo")
+    .style("opacity", 0);
 
-// // load data
-// d3.csv("threedata/teameff.csv", function(error, data) {
+// load data
+d3.csv("threedata/teameff.csv", function(error, data) {
 
-//   // change string (from CSV) into number format
-//   data.forEach(function(d) {
-//     d.eFG = +d.eFG;
-//     d["ORtg"] = +d["ORtg"];
+  // change string (from CSV) into number format
+  data.forEach(function(d) {
+    d.eFG = +d.eFG;
+    d["ORtg"] = +d["ORtg"];
 
-//   });
+  });
 
-//   // don't want dots overlapping axis, so add in buffer to data domain
-//   xScaleFour.domain([d3.min(data, xValueFour)-1, d3.max(data, xValueFour)+1]);
-//   yScaleFour.domain([d3.min(data, yValueFour)-1, d3.max(data, yValueFour)+1]);
+  // don't want dots overlapping axis, so add in buffer to data domain
+  xScaleFour.domain([d3.min(data, xValueFour)-1, d3.max(data, xValueFour)+1]);
+  yScaleFour.domain([d3.min(data, yValueFour)-1, d3.max(data, yValueFour)+1]);
 
-//   // x-axis
-//   svgFour.append("g")
-//       .attr("class", "x axis")
-//       .attr("transform", "translate(0," + heightFour + ")")
-//       .call(xAxisFour)
-//     .append("text")
-//       .attr("class", "label")
-//       .attr("x", widthFour)
-//       .attr("dx", "-2.9em")
-//       .attr("dy", "-0.6em")
-//       .attr("y", -6)
-//       .style("text-anchor", "end")
-//       .text("eFG%");
+  // x-axis
+  svgFour.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + heightFour + ")")
+      .call(xAxisFour)
+    .append("text")
+      .attr("class", "label")
+      .attr("x", widthFour)
+      .attr("dx", "-2.9em")
+      .attr("dy", "-0.6em")
+      .attr("y", -6)
+      .style("text-anchor", "end")
+      .text("eFG%");
 
-//   // y-axis
-//   svgFour.append("g")
-//       .attr("class", "y axis")
-//       .call(yAxisFour)
-//     .append("text")
-//       .attr("class", "label")
-//       .attr("transform", "rotate(0)")
-//       .attr("y", 1)
-//       .attr("dy", "2.2em")
-//       .attr("dx", "2em")
-//       .style("text-anchor", "start")
-//       .text("Offensive Rating");
+  // y-axis
+  svgFour.append("g")
+      .attr("class", "y axis")
+      .call(yAxisFour)
+    .append("text")
+      .attr("class", "label")
+      .attr("transform", "rotate(0)")
+      .attr("y", 1)
+      .attr("dy", "2.2em")
+      .attr("dx", "2em")
+      .style("text-anchor", "start")
+      .text("Offensive Rating");
 
-//   // draw dots
-//   svgFour.selectAll(".dot")
-//       .data(data)
-//     .enter().append("circle")
-//       .attr("class", "dot")
-//       .attr("r", 5)
-//       .attr("cx", xMapFour)
-//       .attr("cy", yMapFour)
-//       .style("fill", colorFilterFour) 
-      
+  // draw dots
+  svgFour.selectAll(".dot")
+      .data(data)
+    .enter().append("circle")
+      .attr("class", "dot")
+      .attr("r", 5)
+      .attr("cx", xMapFour)
+      .attr("cy", yMapFour)
+      .style("fill", colorFilterFour) 
+    
 
 
-//           // tooltip.html(d["team"] + "<br/> (" + xValue(d) 
-//           // + ", " + yValue(d) + " 3PA" +")")
-               
+          // tooltip.html(d["team"] + "<br/> (" + xValue(d) 
+          // + ", " + yValue(d) + " 3PA" +")")
+             
 
-//       // .on("mouseover", function(d) {
-//       //     tooltipTwo.transition()
-//       //          .duration(200)
-//       //          .style("opacity", 1);
-//       //     tooltipTwo.html("<b>" + d["Team"] + "</b>" + "<br/>" + "<br/>" + d.Season) 
-//       //    //  + "<br/> (" + xValue(d) 
-//       //     // + ", " + yValue(d) + ")")
-//       //          .style("left", (d3.event.pageX + 5) + "px")
-//       //          .style("top", (d3.event.pageY - 28) + "px");
-//       // })
-//       // .on("mouseout", function(d) {
-//       //     tooltipTwo.transition()
-//       //          .duration(500);
-//       // });
+      // .on("mouseover", function(d) {
+      //     tooltipTwo.transition()
+      //          .duration(200)
+      //          .style("opacity", 1);
+      //     tooltipTwo.html("<b>" + d["Team"] + "</b>" + "<br/>" + "<br/>" + d.Season) 
+      //    //  + "<br/> (" + xValue(d) 
+      //     // + ", " + yValue(d) + ")")
+      //          .style("left", (d3.event.pageX + 5) + "px")
+      //          .style("top", (d3.event.pageY - 28) + "px");
+      // })
+      // .on("mouseout", function(d) {
+      //     tooltipTwo.transition()
+      //          .duration(500);
+      // });
 
-// });
+});
 
-// //********SECOND SCATTERPLOT********
-// var marginThree = {top: 20, right: 20, bottom: 25, left: 30},
-//     widthThree = 500 - marginThree.left - marginThree.right,
-//     heightThree = 360 - marginThree.top - marginThree.bottom;
+//********SECOND SCATTERPLOT********
+var marginThree = {top: 20, right: 20, bottom: 25, left: 30},
+    widthThree = 500 - marginThree.left - marginThree.right,
+    heightThree = 360 - marginThree.top - marginThree.bottom;
 
-// /* 
-//  * value accessor - returns the value to encode for a given data object.
-//  * scale - maps value to a visual display encoding, such as a pixel position.
-//  * map function - maps from data value to display value
-//  * axis - sets up axis
-//  */ 
+/* 
+ * value accessor - returns the value to encode for a given data object.
+ * scale - maps value to a visual display encoding, such as a pixel position.
+ * map function - maps from data value to display value
+ * axis - sets up axis
+ */ 
 
-// // setup x 
-// var xValueThree = function(d) { return d.efg;}, // data -> value
-//     xScaleThree = d3.scale.linear().range([-15, widthThree]), // value -> display
-//     xMapThree = function(d) { return xScaleThree(xValueThree(d));}, // data -> display
-//     xAxisThree = d3.svg.axis().scale(xScaleThree).orient("bottom").tickSize(-heightThree);
+// setup x 
+var xValueThree = function(d) { return d.efg;}, // data -> value
+    xScaleThree = d3.scale.linear().range([-15, widthThree]), // value -> display
+    xMapThree = function(d) { return xScaleThree(xValueThree(d));}, // data -> display
+    xAxisThree = d3.svg.axis().scale(xScaleThree).orient("bottom").tickSize(-heightThree);
 
-// // setup y
-// var yValueThree = function(d) { return d["rating"];}, // data -> value
-//     yScaleThree = d3.scale.linear().range([heightThree, 0]), // value -> display
-//     yMapThree = function(d) { return yScaleThree(yValueThree(d));}, // data -> display
-//     yAxisThree = d3.svg.axis().scale(yScaleThree).orient("left").tickSize(-widthThree).ticks(6).tickValues([99,101,103,105,107,109]);
+// setup y
+var yValueThree = function(d) { return d["rating"];}, // data -> value
+    yScaleThree = d3.scale.linear().range([heightThree, 0]), // value -> display
+    yMapThree = function(d) { return yScaleThree(yValueThree(d));}, // data -> display
+    yAxisThree = d3.svg.axis().scale(yScaleThree).orient("left").tickSize(-widthThree).ticks(6).tickValues([99,101,103,105,107,109]);
 
-// // setup fill color
-// //var cValue = function(d) { return d.Manufacturer;},
-// var colorThree = d3.scale.category20();
+// setup fill color
+//var cValue = function(d) { return d.Manufacturer;},
+var colorThree = d3.scale.category20();
 
-// function colorFilterThree(d){
-//     if (d.year === "#dddddd") {
-//         return "ffcb91"; 
-//      }  else if (d.year > "2016") {
-//         return "#eba270";
-//      }  else {
-//         return "#f0f0f0";
-//      }
-//      };
+function colorFilterThree(d){
+    if (d.year === "#dddddd") {
+        return "ffcb91"; 
+     }  else if (d.year > "2016") {
+        return "#eba270";
+     }  else {
+        return "#f0f0f0";
+     }
+     };
 
-// // Colors at https://gka.github.io/palettes/#colors=lightyellow,orange,deeppink,darkred|steps=43|bez=1|coL=1
+// Colors at https://gka.github.io/palettes/#colors=lightyellow,orange,deeppink,darkred|steps=43|bez=1|coL=1
 
-// // add the graph canvas to the body of the webpage
-// var svgThree = d3.select("#area2")
-//     .append("svg")
-//     .attr("width", widthThree + marginThree.left + marginThree.right)
-//     .attr("height", heightThree + marginThree.top + marginThree.bottom)
-//     .append("g")
-//     .attr("transform", "translate(" + marginThree.left + "," + marginThree.top + ")");
+// add the graph canvas to the body of the webpage
+var svgThree = d3.select("#area2")
+    .append("svg")
+    .attr("width", widthThree + marginThree.left + marginThree.right)
+    .attr("height", heightThree + marginThree.top + marginThree.bottom)
+    .append("g")
+    .attr("transform", "translate(" + marginThree.left + "," + marginThree.top + ")");
 
-// // add the tooltip area to the webpage
-// var tooltip = d3.select("body").append("div")
-//     .attr("class", "tooltip")
-//     .style("opacity", 0);
+// add the tooltip area to the webpage
+var tooltip = d3.select("body").append("div")
+    .attr("class", "tooltip")
+    .style("opacity", 0);
 
-// // load data
-// d3.csv("threedata/eff.csv", function(error, data) {
+// load data
+d3.csv("threedata/eff.csv", function(error, data) {
 
-//   // change string (from CSV) into number format
-//   data.forEach(function(d) {
-//     d.efg = +d.efg;
-//     d["rating"] = +d["rating"];
+  // change string (from CSV) into number format
+  data.forEach(function(d) {
+    d.efg = +d.efg;
+    d["rating"] = +d["rating"];
 
-//   });
+  });
 
-//   // don't want dots overlapping axis, so add in buffer to data domain
-//   xScaleThree.domain([d3.min(data, xValueThree)-1, d3.max(data, xValueThree)+1]);
-//   yScaleThree.domain([d3.min(data, yValueThree)-1, d3.max(data, yValueThree)+1]);
+  // don't want dots overlapping axis, so add in buffer to data domain
+  xScaleThree.domain([d3.min(data, xValueThree)-1, d3.max(data, xValueThree)+1]);
+  yScaleThree.domain([d3.min(data, yValueThree)-1, d3.max(data, yValueThree)+1]);
 
-//   // x-axis
-//   svgThree.append("g")
-//       .attr("class", "x axis")
-//       .attr("transform", "translate(0," + heightThree + ")")
-//       .call(xAxisThree)
-//     .append("text")
-//       .attr("class", "label")
-//       .attr("x", widthThree)
-//       .attr("dx", "-1em")
-//       .attr("dy", "-1.2em")
-//       .attr("y", -6)
-//       .style("text-anchor", "end")
-//       .text("eFG%");
+  // x-axis
+  svgThree.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + heightThree + ")")
+      .call(xAxisThree)
+    .append("text")
+      .attr("class", "label")
+      .attr("x", widthThree)
+      .attr("dx", "-1em")
+      .attr("dy", "-1.2em")
+      .attr("y", -6)
+      .style("text-anchor", "end")
+      .text("eFG%");
 
-//   // y-axis
-//   svgThree.append("g")
-//       .attr("class", "y axis")
-//       .call(yAxisThree)
-//     .append("text")
-//       .attr("class", "label")
-//       .attr("transform", "rotate(0)")
-//       .attr("y", 1)
-//       .attr("dy", "2.3em")
-//       .attr("dx", "2.1em")
-//       .style("text-anchor", "start")
-//       .text("Offensive Rating");
+  // y-axis
+  svgThree.append("g")
+      .attr("class", "y axis")
+      .call(yAxisThree)
+    .append("text")
+      .attr("class", "label")
+      .attr("transform", "rotate(0)")
+      .attr("y", 1)
+      .attr("dy", "2.3em")
+      .attr("dx", "2.1em")
+      .style("text-anchor", "start")
+      .text("Offensive Rating");
 
-//   // draw dots
-//   svgThree.selectAll(".dot")
-//       .data(data)
-//     .enter().append("circle")
-//       .attr("class", "dot")
-//       .attr("r", 5)
-//       .attr("cx", xMapThree)
-//       .attr("cy", yMapThree)
-//       .style("fill", colorFilterThree) 
-      
+  // draw dots
+  svgThree.selectAll(".dot")
+      .data(data)
+    .enter().append("circle")
+      .attr("class", "dot")
+      .attr("r", 5)
+      .attr("cx", xMapThree)
+      .attr("cy", yMapThree)
+      .style("fill", colorFilterThree) 
+    
 
-//       // .on("mouseover", function(d) {
-//       //     tooltip.transition()
-//       //          .duration(200)
-//       //          .style("opacity", 1);
-//       //     tooltip.html("<b>" + "Season: " + "</b>" + d["year"]) 
-//       //    //  + "<br/> (" + xValue(d) 
-//       //     // + ", " + yValue(d) + ")")
-//       //          .style("left", (d3.event.pageX + 5) + "px")
-//       //          .style("top", (d3.event.pageY - 28) + "px");
-//       // })
-//       // .on("mouseout", function(d) {
-//       //     tooltip.transition()
-//       //          .duration(500);
-//       // });
+      // .on("mouseover", function(d) {
+      //     tooltip.transition()
+      //          .duration(200)
+      //          .style("opacity", 1);
+      //     tooltip.html("<b>" + "Season: " + "</b>" + d["year"]) 
+      //    //  + "<br/> (" + xValue(d) 
+      //     // + ", " + yValue(d) + ")")
+      //          .style("left", (d3.event.pageX + 5) + "px")
+      //          .style("top", (d3.event.pageY - 28) + "px");
+      // })
+      // .on("mouseout", function(d) {
+      //     tooltip.transition()
+      //          .duration(500);
+      // });
 
-// });
+});
 
 </script>
 </div>
